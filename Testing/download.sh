@@ -7,13 +7,13 @@ then
 	exit 1
 fi
 
+# Extract the URL
 URL="$1"
-echo "Cleaning URL: $URL"
 CLEANED=$(sh ./extract_url.sh $URL)
-echo "Cleaned URL: $CLEANED"
-echo "Attempting Download..."
-USER=$(echo $CLEANED | sed 's@[a-zA-Z]*:\/\/github\.com\/\([a-zA-Z]*\)\/[a-zA-Z]*@\1@' )
+
+# Download the file to <username>.zip
+USER=$(echo $CLEANED | sed 's@[a-zA-Z]*:\/\/github\.com\/\([a-zA-Z]*\)\/\([a-zA-Z]*\)@\1_\2@' )
 FILENAME="$USER.zip"
-echo $FILENAME
 curl -L -o $FILENAME $CLEANED
-echo "Downloaded repository as: $FILENAME"
+
+echo $FILENAME
