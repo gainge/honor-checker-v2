@@ -4,10 +4,16 @@
 NOISE_PATTERNS="./noise.txt"
 
 FILE="$1"
-sed -i 's/[{}]//g' $FILE
-sed -i 's/^[[:blank:]]*\(.*\)$/\1/' $FILE # Remove leading/trailing whitespace
-sed -i '/^$/d' $FILE
+DESTINATION_FILE="$2"
 
-# Now we do the reverse grep on the dumb patterns
+# Make a backup of the input file
+cp $FILE $DESTINATION_FILE
+
+# Perform the necessary replacements
+sed -i 's/[{}]//g' $DESTINATION_FILE
+sed -i 's/^[[:blank:]]*\(.*\)$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
+sed -i '/^$/d' $DESTINATION_FILE
+
+# Now we do the reverse grep on the silly patterns
 TEMP="temp.txt"
-grep -i -v -f $NOISE_PATTERNS $FILE > $TEMP; mv $TEMP $FILE
+grep -i -v -f $NOISE_PATTERNS $DESTINATION_FILE > $TEMP; mv $TEMP $DESTINATION_FILE
