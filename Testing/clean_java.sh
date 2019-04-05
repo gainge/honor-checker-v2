@@ -17,3 +17,6 @@ sed -i '/^$/d' $DESTINATION_FILE
 # Now we do the reverse grep on the silly patterns
 TEMP="temp.txt"
 grep -i -v -f $NOISE_PATTERNS $DESTINATION_FILE > $TEMP; mv $TEMP $DESTINATION_FILE
+
+# Finally sort things to make our lives easier
+sort -u $DESTINATION_FILE -o $DESTINATION_FILE
