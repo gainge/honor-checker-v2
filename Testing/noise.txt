@@ -13,4 +13,265 @@ else if
 while (true)
 \/\*\*
 \*\/
+\/\*
 @Test
+catch(DataAccessException e)
+e.printStackTrace()
+dao.clear()
+db.closeConnection(false)
+db.closeConnection(true)
+EventDao eventDao = new EventDao(conn)
+db.closeConnection(commit)
+Connection conn = db.openConnection()
+@Before
+@After
+Event event = null
+public void clear()
+catch (DBException.DataBaseException e)
+public void setUp()
+boolean commit
+public String getDescendant()
+public void setDescendant(String descendant)
+public String getPersonID()
+public void setPersonID(String personID)
+this.personID =
+public String getFirstName()
+public void setFirstName(String firstName)
+this.firstName =
+public String getLastName()
+public void setLastName(String lastName)
+public void setGender(String gender)
+this.gender =
+public String getFatherID()
+this.fatherID =
+public void setFatherID(String fatherID)
+public String getMotherID()
+public void setMotherID(String motherID)
+this.motherID =
+public String getSpouseID()
+public String getSpouse()
+public void setSpouseID(String spouseID)
+this.spouseID =
+public class RegisterResult
+this.authToken = authToken
+this.userName = userName
+this.personID = personID
+public class FillResult
+private String descendant
+private String eventID
+private String personID
+private double latitude
+private double longitude
+private String city
+private String eventType
+private int year
+private String latitude
+private String longitude
+private String year
+this.descendant =
+this.eventID =
+this.latitude =
+this.longitude =
+this.city =
+this.eventType =
+this.year =
+public String getEventID()
+return eventID
+return personID
+return latitude
+return longitude
+return city
+return country
+return eventType
+public int getYear()
+public void setLatitude
+public void setLongitude
+getLatitude
+getLongitude
+getCity
+getCountry
+getEventType
+public void setEventType
+getYear
+public void setYear
+return persons
+public class LoadResult
+return events
+public class LoginResult
+private String authToken
+private String userName
+this.authToken =
+this.userName =
+getAuthToken
+public void setAuthToken
+getUserName
+public void setUserName
+public class ClearResult
+private Connection connection
+catch (SQLException
+catch(SQLException
+stmt.setString(
+ResultSet rs
+rs.close()
+return user
+stmt.executeQuery()
+connection = DriverManager.getConnection(CONNECTION_URL)
+setAutoCommit
+return connection
+commit()
+rollback()
+connection.close()
+conn.close()
+this.connection =
+public PersonDao(Connection connection)
+public EventDao(Connection connection)
+public UserDao(Connection connection)
+Person person = null
+return person;
+return event;
+Random rand = new Random()
+FileSystems.getDefault().getPath
+private List<String> data
+private String\[\] data
+private ArrayList<String> data
+private void run(String port
+MAX_WAITING_CONNECTIONS
+private HttpServer server
+Initializing HTTP Server
+new InetSocketAddress
+HttpServer.create
+catch (IOException
+catch(IOException
+catch (FileNotFoundException
+catch (FileNotFoundException
+return;
+setExecutor
+createContext
+Starting server
+server.start()
+= args\[0\];
+getToken
+return token
+public void setToken
+public boolean equals(Object o)
+getUserName
+public void setUserName
+this.userName =
+getPassword
+public void setPassword
+return password
+public void setEmail
+this.email =
+this.password =
+getEmail
+getFirstName
+return firstName
+public void setFirstName
+this.firstName =
+getLastName
+return lastName
+public void setLastName
+private String gender
+private String father
+private String mother
+private String spouse
+this.personID = personID;
+this.descendant = descendant;
+this.firstName = firstName;
+this.lastName = lastName;
+this.gender = gender;
+this.father = father;
+this.mother = mother;
+this.spouse = spouse;
+void setDescendant
+void setFather
+void setMother
+void setSpouse
+if (o == null)
+this.email =
+this.firstName =
+this.lastName =
+this.gender =
+this.users =
+public class LoadRequest
+this.persons = persons
+this.events = events
+public class LoginRequest
+UUID.randomUUID
+new UserDao(connection)
+new AuthTokenDao(connection)
+return result;
+exchange.getRequestBody().close()
+if (!success)
+Location\[\] data
+Class.forName(driver)
+// Context of the app under test
+assertEquals(4, 2 + 2)
+commit = false
+exchange.getResponseBody().close()
+exchange.sendResponseHeaders(HttpURLConnection.HTTP_BAD_REQUEST, 0)
+exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0)
+exchange.sendResponseHeaders(HttpURLConnection.HTTP_SERVER_ERROR, 0)
+FillService fillService = new FillService()
+final String driver =
+ExampleInstrumentedTest
+ExampleUnitTest
+public Person(String personID, String descendant, String firstName, String lastName, String gender)
+public String getFather()
+public String getGender()
+public String getMother()
+addition_isCorrect
+public void handle(HttpExchange
+public void setCity(String city)
+public void setEventID(String eventID)
+public void useAppContext()
+@see
+return authToken
+return commit
+return data
+return descendant
+return email
+return father
+return gender
+return mother
+return spouse
+return year
+stmt.executeUpdate()
+Creating contexts
+Server started
+commit = true
+conn = db.openconnection()
+conn = null
+loginservice loginservice = new loginservice()
+outputstream respbody = exchange.getresponsebody()
+@runwith
+success = true
+catch (classnotfoundexception
+public class registerservicetest
+public class authtokendaotest
+public class clearservicetest
+public class fillservicetest
+public class eventdaotest
+public class loadservicetest
+public class loginservicetest
+public class persondaotest
+public class userdaotest
+buf = new char
+varchar
+private integer year;
+public class filehandler
+dao = new authtokendao(conn)
+dao = new eventdao(conn)
+events.add(event)
+eventservice service = new eventservice();
+public eventdao(connection conn)
+public persondao(connection conn)
+public class eventservice
+public class loadservice
+public class location
+public class loginservice
+public class personservice
+public class registerrequest
+return message
+example local unit test
+instrumented test,
