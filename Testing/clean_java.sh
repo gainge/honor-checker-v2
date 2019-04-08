@@ -13,6 +13,7 @@ cp $FILE $DESTINATION_FILE
 sed -i 's/[{}]//g' $DESTINATION_FILE
 sed -i 's/^[[:blank:]]*\(.*\)$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
 sed -i '/^$/d' $DESTINATION_FILE
+sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE  
 
 # Now we do the reverse grep on the silly patterns
 TEMP="temp.txt"
