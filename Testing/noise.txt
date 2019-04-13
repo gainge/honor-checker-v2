@@ -275,3 +275,19 @@ public class registerrequest
 return message
 example local unit test
 instrumented test,
+exchange.getrequestmethod().tolowercase().equals(
+private string email;
+private string firstname;
+private string lastname;
+private string password;
+public class fillservice
+public class loadservice
+public class locations
+public class loginservice
+public class registerrequest
+string sql = "select \* from authtokens where authtoken = ?;";
+string sql = "select \* from events where descendant = ?;";
+string sql = "select \* from events where eventid = ?;";
+string sql = "select \* from persons where descendant = ?;";
+string sql = "select \* from persons where personid = ?;";
+string sql = "select \* from users where username = ?;";
