@@ -46,7 +46,4 @@ find $EXTRACTED -name '*.java' -exec cat {} \; >"$ALLJAVA"
 
 rm -rf "$EXTRACTED"
 
-# Clean the extracted code
-./clean_java.sh $ALLJAVA $CLEANED
-
 echo "Finished!"
