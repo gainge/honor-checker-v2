@@ -3,6 +3,11 @@
 # This is where we remove a bunch of gunk in the java files
 NOISE_PATTERNS="./noise.txt"
 
+if [[ "$#" -ne 2 ]]; then
+  echo "usage: $0 <SOURCE FILE> <DESTINATION FILE>"
+	exit 1
+fi
+
 FILE="$1"
 DESTINATION_FILE="$2"
 
@@ -13,7 +18,7 @@ cp $FILE $DESTINATION_FILE
 sed -i 's/[{}]//g' $DESTINATION_FILE
 sed -i 's/^[[:blank:]]*\(.*\)$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
 sed -i '/^$/d' $DESTINATION_FILE
-sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE  
+sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE
 
 # Now we do the reverse grep on the silly patterns
 TEMP="temp.txt"
