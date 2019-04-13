@@ -6,7 +6,7 @@ TARGET_DIR=$STUDENT_CODE_DIR # Default output directory
 # SEMESTER="winter2019"
 
 if [[ "$#" -eq 0 ]]; then
-  echo "usage: $0 <ZIP FILE> [TARGET DIRECTORY]"
+  echo "usage: $0 <ZIPS> [TARGET DIRECTORY]"
 	exit 1
 fi
 
