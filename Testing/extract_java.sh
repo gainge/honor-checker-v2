@@ -25,8 +25,8 @@ then
 fi
 
 FULL_STUDENT_DIR="$STUDENT_CODE_DIR/$NETID"
-ALLJAVA="$FULL_STUDENT_DIR/original_$NETID.txt"
-CLEANED="$FULL_STUDENT_DIR/$NETID.txt"
+ALLJAVA="$FULL_STUDENT_DIR/alljava.txt"
+CLEANED="$FULL_STUDENT_DIR/cleaned.txt"
 
 # Make a clean slate for file system
 rm -rf "$FULL_STUDENT_DIR"
