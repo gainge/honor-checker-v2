@@ -15,6 +15,8 @@ STUDENT_CODE_DIR="$2"
 
 # extract the netID from the file
 NETID=${FILENAME%.*}
+NETID=${NETID#*/}
+NETID=${NETID%%/*}
 NETID=${NETID%_[a-zA-Z]*}
 NETID=${NETID##[a-zA-Z]*_}
 
@@ -33,7 +35,6 @@ rm -rf "$FULL_STUDENT_DIR"
 mkdir "$FULL_STUDENT_DIR"
 
 touch $ALLJAVA
-touch $CLEANED
 
 # Extract the zip as java source only
 echo "Extracting java source..."
