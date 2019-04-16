@@ -15,10 +15,11 @@ DESTINATION_FILE="$2"
 cp $FILE $DESTINATION_FILE
 
 # Perform the necessary replacements
-sed -i 's/[{}]//g' $DESTINATION_FILE
-sed -i 's/^[[:blank:]]*\(.*\)$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
-sed -i '/^$/d' $DESTINATION_FILE
-sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE
+sed -i 's/[{}]//g' $DESTINATION_FILE                              # Remove brackets
+sed -i 's/^[[:blank:]]*\(.*\)$/\1/' $DESTINATION_FILE             # Remove leading/trailing whitespace
+sed -i 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # convert javadoc lines to strings
+sed -i '/^$/d' $DESTINATION_FILE                                  # Remove blank lines
+sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE                        # Lowercase
 
 # Now we do the reverse grep on the silly patterns
 TEMP="temp.txt"
