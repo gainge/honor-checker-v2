@@ -61,6 +61,7 @@ createcontext("/person
 createcontext("/user/login", new loginhandler());
 createcontext("/user/register", new registerhandler());
 .createstatement();
+createtables();
 creating contexts
 dao = null;
 daotest
@@ -152,8 +153,12 @@ is received, it looks at the url path inside the http request, and
 its http handlers.
 java provides an httpserver class
 just like "new", this method returns a reference to the new object.
+list<event> data;
+list<event> events;
 list<event> events = new arraylist
+list<person> data;
 list<person> persons = new arraylist
+list<user> users;
 loadrequest(list<user> users, list<person> persons, list<event> events)
 loadresponse response = null;
 log message indicating
@@ -202,6 +207,8 @@ private double latitude;
 private double longitude;
 private eventdao eventdao;
 private event\[\] events;
+private float latitude;
+private float longitude;
 private httpserver server;
 private integer year
 private int generations;
@@ -277,11 +284,12 @@ public class registerrequest
 public class registerresponse
 public class registerresult
 public class registerservice
+public class result
 public class server
 public class user
 public class userdao
 public clearresponse(string message)
-public clearservice() 
+public clearservice()
 public connection openconnection() throws dataaccessexception
 public double getlatitude()
 public double getlongitude()
@@ -555,6 +563,7 @@ this.personid = personid;
 this.person = person;
 this.persons = persons;
 this.spouse = spouse;
+this.success = success;
 this.token = token;
 this.username = username;
 this.users = users;
