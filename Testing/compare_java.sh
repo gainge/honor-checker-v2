@@ -63,7 +63,8 @@ getNumMatches() {
   local FILE2=$2
 
   # Check the matches
-  local NUM_MATCHES=$(comm -12 $FILE1 $FILE2 | wc -l)
+  # local NUM_MATCHES=$(comm -12 $FILE1 $FILE2 | wc -l) # Dang I guess this wasn't working like we expected
+  local NUM_MATCHES=$(grep -i -F -o -f $FILE2 $FILE1 | sort | uniq -c | sed 's/^ *//' | wc -l)
 
   echo $NUM_MATCHES
 }
@@ -89,8 +90,9 @@ compareFiles() {
 
 
 STUDENT_CODE_DIR="student-code-directories"
+REPO_DIR="repos"
 
-REPOS=() # TODO actually support repos for real
+REPOS=( $(find $REPO_DIR -maxdepth 1 \( ! -name $REPO_DIR \) -type d) )
 DIRECTORIES=( $(find $STUDENT_CODE_DIR -maxdepth 1 \( ! -name $STUDENT_CODE_DIR \) -type d) )
 TOTAL=${#DIRECTORIES[@]}
 
