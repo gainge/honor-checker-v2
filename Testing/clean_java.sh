@@ -18,6 +18,9 @@ cp $FILE $DESTINATION_FILE
 sed -i 's/[{}]//g' $DESTINATION_FILE                              # Remove brackets
 sed -i 's/^[[:blank:]]*\(.*\)$/\1/' $DESTINATION_FILE             # Remove leading/trailing whitespace
 sed -i 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # convert javadoc lines to strings
+sed -i 's/^[[:blank:]]*\*[[:blank:]]*$//' $DESTINATION_FILE       # Remove lines with only asterisks
+sed -i 's/^[[:blank:]]*\/\*[[:blank:]]*$//' $DESTINATION_FILE     # Remove lines with only multiline comment header
+sed -i 's/^[[:blank:]]*static[[:blank:]]*$//' $DESTINATION_FILE   # Remove random static lines I guess (?)
 sed -i '/^$/d' $DESTINATION_FILE                                  # Remove blank lines
 sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE                        # Lowercase
 
