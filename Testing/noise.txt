@@ -1,293 +1,599 @@
-import
-package
-void main(
-try
-this()
-public String toString()
-@Override
-return 0
-return false
-return true
-else
-else if
-while (true)
 \/\*\*
 \*\/
-\/\*
-@Test
-catch(DataAccessException e)
-e.printStackTrace()
-dao.clear()
-db.closeConnection(false)
-db.closeConnection(true)
-EventDao eventDao = new EventDao(conn)
-db.closeConnection(commit)
-Connection conn = db.openConnection()
-@Before
-@After
-Event event = null
-public void clear()
-catch (DBException.DataBaseException e)
-public void setUp()
-boolean commit
-public String getDescendant()
-public void setDescendant(String descendant)
-public String getPersonID()
-public void setPersonID(String personID)
-this.personID =
-public String getFirstName()
-public void setFirstName(String firstName)
-this.firstName =
-public String getLastName()
-public void setLastName(String lastName)
-public void setGender(String gender)
-this.gender =
-public String getFatherID()
-this.fatherID =
-public void setFatherID(String fatherID)
-public String getMotherID()
-public void setMotherID(String motherID)
-this.motherID =
-public String getSpouseID()
-public String getSpouse()
-public void setSpouseID(String spouseID)
-this.spouseID =
-public class RegisterResult
-this.authToken = authToken
-this.userName = userName
-this.personID = personID
-public class FillResult
-private String descendant
-private String eventID
-private String personID
-private double latitude
-private double longitude
-private String city
-private String eventType
-private int year
-private String latitude
-private String longitude
-private String year
-this.descendant =
-this.eventID =
-this.latitude =
-this.longitude =
-this.city =
-this.eventType =
-this.year =
-public String getEventID()
-return eventID
-return personID
-return latitude
-return longitude
-return city
-return country
-return eventType
-public int getYear()
-public void setLatitude
-public void setLongitude
-getLatitude
-getLongitude
-getCity
-getCountry
-getEventType
-public void setEventType
-getYear
-public void setYear
-return persons
-public class LoadResult
-return events
-public class LoginResult
-private String authToken
-private String userName
-this.authToken =
-this.userName =
-getAuthToken
-public void setAuthToken
-getUserName
-public void setUserName
-public class ClearResult
-private Connection connection
-catch (SQLException
-catch(SQLException
-stmt.setString(
-ResultSet rs
-rs.close()
-return user
-stmt.executeQuery()
-connection = DriverManager.getConnection(CONNECTION_URL)
-setAutoCommit
-return connection
-commit()
-rollback()
-connection.close()
-conn.close()
-this.connection =
-public PersonDao(Connection connection)
-public EventDao(Connection connection)
-public UserDao(Connection connection)
-Person person = null
-return person;
-return event;
-Random rand = new Random()
-FileSystems.getDefault().getPath
-private List<String> data
-private String\[\] data
-private ArrayList<String> data
-private void run(String port
-MAX_WAITING_CONNECTIONS
-private HttpServer server
-Initializing HTTP Server
-new InetSocketAddress
-HttpServer.create
-catch (IOException
-catch(IOException
-catch (FileNotFoundException
-catch (FileNotFoundException
-return;
-setExecutor
-createContext
-Starting server
-server.start()
-= args\[0\];
-getToken
-return token
-public void setToken
-public boolean equals(Object o)
-getUserName
-public void setUserName
-this.userName =
-getPassword
-public void setPassword
-return password
-public void setEmail
-this.email =
-this.password =
-getEmail
-getFirstName
-return firstName
-public void setFirstName
-this.firstName =
-getLastName
-return lastName
-public void setLastName
-private String gender
-private String father
-private String mother
-private String spouse
-this.personID = personID;
-this.descendant = descendant;
-this.firstName = firstName;
-this.lastName = lastName;
-this.gender = gender;
-this.father = father;
-this.mother = mother;
-this.spouse = spouse;
-void setDescendant
-void setFather
-void setMother
-void setSpouse
-if (o == null)
-this.email =
-this.firstName =
-this.lastName =
-this.gender =
-this.users =
-public class LoadRequest
-this.persons = persons
-this.events = events
-public class LoginRequest
-UUID.randomUUID
-new UserDao(connection)
-new AuthTokenDao(connection)
-return result;
-exchange.getRequestBody().close()
+@after
+although it is for a fictitious
+an http server in any java program.
+assertequals(4, 2 + 2);
+assertfalse
+assertnotnull
+asserttrue
+authtoken authtoken = null;
+authtoken = null;
+(authtoken) o;
+authtoken token = null;
+automatically generated file
+basic elements of the server.
+@before
+boolean commit = true;
+boolean success = false;
+catch (classnotfoundexception e)
+catch(classnotfoundexception e)
+catch (dataaccessexception e)
+catch(dataaccessexception e)
+catch (exception e)
+catch(exception e)
+catch (ioexception e)
+catch(ioexception e)
+catch (sqlexception e)
+catch(sqlexception e)
+char\[\] buf = new char[1024];
+char\[\] buf = new char\[1024\];
+check to see if an "authorization" header is present
+city in which event occurred
+class.forname(driver);
+.clear();
+client's fault), so we return an "internal server error" status code
+.close();
+closeconnection(commit);
+closeconnection(false);
+closeconnection(true);
+close the output stream.  this is how java knows we are done
+.commit();
+commit = false;
+comparetest
+conn = drivermanager.getconnection(connection_url);
+connection conn;
+connection connection;
+connection = null;
+conn = null;
+context appcontext
+context of the app under test.
+create and install the http handler for the url paths.
+create a new httpserver object.
+createcontext("/clear
+createcontext("/event
+createcontext("/fill/", new fillhandler());
+createcontext("/fill", new fillhandler());
+createcontext("/load
+createcontext("/", new defaulthandler());
+createcontext("/", new filehandler());
+createcontext("/person
+createcontext("/user/login", new loginhandler());
+createcontext("/user/register", new registerhandler());
+.createstatement();
+creating contexts
+dao = null;
+daotest
+dataaccessexception()
+dataaccessexception(string message)
+database db;
+data in the database already associated with the given user name, it is delete
+db.cleartables();
+db.createtables();
+db = new database();
+db = null;
+delete from events where descendant = ?;";
+delete(string eventid) throws dataaccessexception
+diditwork
+display/log the request json data
+display/log the stack trace
+else
+error encountered while finding
+event event;
+event event = (event)
+event event = null;
+even though the "main" method has completed, the program will continue
+events.add(event);
+example local unit test, which will execute on the development machine (host).
+exchange.getresponsebody().close();
+exchange.sendresponseheaders(
+extract the auth token from the "authorization" header
+file file = new file(filepath);
+files.copy
+fillresponse response = null;
+final string connection_url = "jdbc:sqlite:familymap.sqlite";
+final string driver = "org.sqlite.jdbc";
+for (int i = 0; i < events.size(); i++)
+for (int i = 0; i < persons.size(); i++)
+for (int i = 0; i < users.size(); i++)
+for processing.
+for the program will also complete.
+for this server, the only command-line argument is the port number on which
+forwards the request to the handler for that url path.
+generated person and event data.
+get the http request headers
+get the request body input strea
+get the response body output stream.
+gson gson = new gson();
+headers reqheaders = exchange.getrequestheaders();
+httpserver is the class that actually implements the http network
+if (commit)
+if (event == null)
+if (exchange.getrequestmethod().tolowercase()
+if (file.exists())
+if (person == null)
+if (reqheaders.containskey("authorization"))
+if (rs.next())
+if (rs.next() == true)
 if (!success)
-Location\[\] data
-Class.forName(driver)
-// Context of the app under test
-assertEquals(4, 2 + 2)
-commit = false
-exchange.getResponseBody().close()
-exchange.sendResponseHeaders(HttpURLConnection.HTTP_BAD_REQUEST, 0)
-exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0)
-exchange.sendResponseHeaders(HttpURLConnection.HTTP_SERVER_ERROR, 0)
-FillService fillService = new FillService()
-final String driver =
-ExampleInstrumentedTest
-ExampleUnitTest
-public Person(String personID, String descendant, String firstName, String lastName, String gender)
-public String getFather()
-public String getGender()
-public String getMother()
-addition_isCorrect
-public void handle(HttpExchange
-public void setCity(String city)
-public void setEventID(String eventID)
-public void useAppContext()
-@see
-return authToken
-return commit
-return data
-return descendant
-return email
-return father
-return gender
-return mother
-return spouse
-return year
-stmt.executeUpdate()
-Creating contexts
-Server started
-commit = true
-conn = db.openconnection()
-conn = null
-loginservice loginservice = new loginservice()
-outputstream respbody = exchange.getresponsebody()
-@runwith
-success = true
-catch (classnotfoundexception
-public class registerservicetest
-public class authtokendaotest
-public class clearservicetest
-public class fillservicetest
-public class eventdaotest
-public class loadservicetest
-public class loginservicetest
-public class persondaotest
-public class userdaotest
-buf = new char
-varchar
-private integer year;
-public class filehandler
-dao = new authtokendao(conn)
-dao = new eventdao(conn)
-events.add(event)
-eventservice service = new eventservice();
-public eventdao(connection conn)
-public persondao(connection conn)
-public class eventservice
+if (token == null)
+if (user == null)
+if we find out something went wrong, pass a false into closeconnection and this
+import android
+import com.google.gson.gson;
+import com.sun.net.httpserver.*;
+import dao
+import dataaccess
+import handlers
+import java.
+import javax.xml.crypto.data;
+import model
+import org.junit
+import org.junit.runner.runwith;
+import org.junit.test;
+import request
+import result
+import service
+import static org.junit.assert.*;
+incoming client connections.
+indicate that we are using the default "executor".
+initializing http server
+inputstreamreader sr = new inputstreamreader(is);
+inputstream reqbody = exchange.getrequestbody();
+insert into events (eventid, descendant, personid, latitude, longitude, " +
+inside the server, which can be useful
+instrumented test
+integer not null
+int generations = 4;
+int hashcode()
+in the background.
+int len;
+is received, it looks at the url path inside the http request, and
+its http handlers.
+java provides an httpserver class
+just like "new", this method returns a reference to the new object.
+list<event> events = new arraylist
+list<person> persons = new arraylist
+loadrequest(list<user> users, list<person> persons, list<event> events)
+loadresponse response = null;
+log message indicating
+marks we can change them later with help from the statement
+max_waiting_connections
+messages containing information about its internal activities.
+method for the server program
+new authtokendao(conn);
+new dataaccessexception("error encountered while finding token");
+new dataaccessexception("sql error encountered while clearing tables");
+new eventdao(conn);
+new inetsocketaddress
+new persondao(conn);
+new server().run
+new userdao(conn);
+// next we send the json data in the http response body.
+(non-empty string)
+// now that the status code and headers have been sent to the client,
+objects.equals(
+// on which the server should accept incoming client connections.
+open a database connection to the file given in the path
+openconnection();
+outputstream respbody = exchange.getresponsebody();
+outputstreamwriter sw = new outputstreamwriter(os);
+@override
+package dao
+package dataaccess;
+package handler
+package model
+package request
+package service
+@param
+parameter must be a user already registered with the server
+person find(string
+person = null;
+= (person) o
+person person = null;
+persons.add(person);
+populates the server's database with generated data for the specified user
+posted user, person, and event data into the database
+.preparestatement(sql);
+.printstacktrace();
+private authtokendao authtokendao;
+private database db;
+private double latitude;
+private double longitude;
+private eventdao eventdao;
+private event\[\] events;
+private httpserver server;
+private integer year
+private int generations;
+private int year;
+private list<location> locations;
+private list<person> persons;
+private persondao persondao;
+private person\[\] data;
+private person\[\] persons;
+private string authtoken;
+private string city;
+private string country;
+private string descendant;
+private string email;
+private string eventid;
+private string eventtype;
+private string father;
+private string firstname;
+private string gender;
+private string lastname;
+private string message;
+private string mother;
+private string password;
+private string personid;
+private string readstring(inputstream is) throws ioexception
+private string spouse;
+private string token;
+private string username;
+private userdao userdao;
+private user\[\] users;
+private void run(string portnumber)
+// program that can receive incoming http requests, and respond
+// protocol (be glad you don't have to).
+public authtokendao(connection conn)
+public authtoken(string token, string username)
+public boolean equals(object
+public boolean insert(person person) throws dataaccessexception
+public class authtoken
+public class authtokendao
+public class clearhandler implements httphandler
+public class clearresponse
+public class clearresult
+public class clearservice
+public class dataaccessexception extends exception
+public class database
+public class event
+public class eventdao
+public class exampleinstrumentedtest
+public class exampleunittest
+public class filehandler implements httphandler
+public class fillhandler implements httphandler
+public class fillrequest
+public class fillresponse
+public class fillresult
+public class fillservice
+public class loadhandler implements httphandler
+public class loadrequest
+public class loadresponse
+public class loadresult
 public class loadservice
 public class location
-public class loginservice
-public class personservice
-public class registerrequest
-return message
-example local unit test
-instrumented test,
-exchange.getrequestmethod().tolowercase().equals(
-private string email;
-private string firstname;
-private string lastname;
-private string password;
-public class fillservice
-public class loadservice
 public class locations
+public class loginhandler implements httphandler
+public class loginrequest
+public class loginresponse
+public class loginresult
 public class loginservice
+public class names
+public class person
+public class persondao
+public class registerhandler implements httphandler
 public class registerrequest
-string sql = "select \* from authtokens where authtoken = ?;";
-string sql = "select \* from events where descendant = ?;";
-string sql = "select \* from events where eventid = ?;";
-string sql = "select \* from persons where descendant = ?;";
-string sql = "select \* from persons where personid = ?;";
-string sql = "select \* from users where username = ?;";
+public class registerresponse
+public class registerresult
+public class registerservice
+public class server
+public class user
+public class userdao
+public clearresponse(string message)
+public clearservice() 
+public connection openconnection() throws dataaccessexception
+public double getlatitude()
+public double getlongitude()
+public eventdao(connection conn)
+public event find(string eventid) throws dataaccessexception
+public event\[\] getevents()
+public fillrequest(string username, int generations)
+public fillresponse(string message)
+public fillservice()
+public final class buildconfig
+public float getlatitude()
+public float getlongitude()
+public integer getyear()
+public int getyear()
+public list<event> getdata()
+public list<event> getevents()
+public list<person> getdata()
+public list<person> getpersons()
+public list<user> getusers()
+public loadresponse(string message)
+public location\[\] getdata()
+public loginrequest(string username, string password)
+public loginresponse(string authtoken, string username, string personid)
+public persondao(connection conn)
+public person\[\] getdata()
+public person\[\] getpersons()
+public person(string personid, string descendant, string firstname, string lastname, string gender)
+public person(string personid, string descendant, string firstname, string lastname, string gender, string father, string mother, string spouse)
+public registerrequest()
+public registerrequest(string username, string password, string email, string firstname, string lastname, string gender)
+public registerresponse(string authtoken, string username, string personid)
+public static final int version_code = 1;
+public static final string build_type = "debug";
+public static final string flavor = "";
+public static final string version_name = "1.0";
+public static void main(string\[\] args)
+public string getauthtoken()
+public string getcity()
+public string getcountry()
+public string\[\] getdata()
+public string getdescendant()
+public string getemail()
+public string geteventid()
+public string geteventtype()
+public string getfather()
+public string getfirstname()
+public string getgender()
+public string getlastname()
+public string getmessage()
+public string getmother()
+public string getpassword()
+public string getpersonid()
+public string getspouse()
+public string gettoken()
+public string getusername()
+public userdao(connection conn)
+public user\[\] getusers()
+public user(string username, string password, string email, string firstname
+public void addition_iscorrect()
+public void clear()
+public void cleartables() throws dataaccessexception
+public void closeconnection(boolean commit) throws dataaccessexception
+public void createtables() throws dataaccessexception
+public void deletefail()
+public void deletepass()
+public void findfail()
+public void findpass()
+public void handle(httpexchange
+public void insertfail()
+public void insertfail() throws exception
+public void insertpass()
+public void insertpass() throws exception
+public void setauthtoken(string authtoken)
+public void setcity(string city)
+public void setcountry(string country)
+public void setdata(list<event> data)
+public void setdata(list<person> data)
+public void setdescendant(string descendant)
+public void setemail(string email)
+public void seteventid(string eventid)
+public void setevents(list<event> events)
+public void seteventtype(string eventtype)
+public void setfather(string father)
+public void setfirstname(string firstname)
+public void setgender(string gender)
+public void setlastname(string lastname)
+public void setlatitude(double latitude)
+public void setlatitude(float latitude)
+public void setlongitude(double longitude)
+public void setlongitude(float longitude)
+public void setmessage(string message)
+public void setmother(string mother)
+public void setpassword(string password)
+public void setpersonid(string personid)
+public void setpersons(list<person> persons)
+public void setspouse(string spouse)
+public void settoken(string token)
+public void setup() throws exception
+public void setusername(string username)
+public void setusers(list<user> users)
+public void setyear(integer year)
+public void setyear(int year)
+public void teardown() throws exception
+public void useappcontext()
+question mark found in our sql string
+random rand = new random();
+rather than calling "new" directly, we instead create
+Read JSON string from the input stream
+registerhandlers(httpserver server)
+registerhandlers(server);
+registerresponse response = null;
+registerresult registerresult = registerservice.register(registerrequest);
+respbody.close();
+result = loadservice.load(loadrequest);
+result = loginservice.login(loginrequest);
+resultset rs;
+resultset rs = null;
+@return
+return;
+return authtoken;
+return city;
+return commit;
+return conn;
+return connection;
+return country;
+return data;
+return descendant;
+return email;
+return event;
+return eventid;
+return events;
+return eventtype;
+return false;
+return father;
+return firstname;
+return gender;
+return lastname;
+return latitude;
+return longitude;
+return message;
+return mother;
+return null;
+return objects.hash(
+return password;
+return person;
+return personid;
+return persons;
+return response;
+return result;
+return sb.tostring();
+return spouse;
+return success;
+return token;
+return true;
+return user;
+return username;
+return users;
+return uuid.randomuuid().tostring();
+return year;
+.rollback();
+rs.close();
+rs.getdouble("latitude"),
+rs.getdouble("longitude"),
+rs.getint("year"));
+rs.getstring("city"),
+rs.getstring("descendant"),
+rs.getstring("email"),
+rs.getstring("firstname"), rs.getstring("lastname"), rs.getstring("gender"),
+rs.getstring("password"),
+rs.getstring("personid"), rs.getfloat("latitude"), rs.getfloat("longitude"),
+rs = stmt.executequery();
+// running because the httpserver object we created is still running
+@runwith
+sb.append(buf, 0, len);
+@see
+select \* from authtoken
+select \* from event
+select \* from person
+select \* from token
+select \* from user
+server = httpserver.create(
+server.setexecutor(null);
+// server should accept incoming client connections.
+server.start();
+server started
+service = new clearservice();
+service = new eventservice();
+service = new fillservice();
+service = new loadservice();
+service = new loginservice();
+service = new registerservice();
+servicetest
+.setautocommit(false);
+should contain one command-line argument, which is the port number
+// since the server has no "user interface", it should display "log"
+// some kind of internal error has occurred inside the server (not the
+sql error encountered while creating tables
+// start a transaction
+start a transaction
+starting server
+// start sending the http response to the client, starting with
+// status code to the client.
+stmt.executeupdate(
+stmt.setdouble(
+stmt.setint(
+stmt.setstring(
+string authtoken = reqheaders.getfirst("authorization");
+string authtoken = uuid.tostring();
+stringbuilder sb = new stringbuilder();
+string city;
+string\[\] data;
+(string: “f” or “m”)
+string gender, string father, string mother, string spouse)
+string personid = person.getpersonid();
+string personid = uuid.tostring();
+string portnumber = args\[0\];
+string reqdata = readstring(reqbody);
+string respdata = gson.tojson(response);
+success = true;
+super();
+super(message);
+super(success, message);
+sw.flush();
+sw.write(str);
+system.out.println(reqdata);
+// take cs 460 for a deeper understanding of what it means.
+// tells the httpserver to start accepting incoming client connections.
+@test
+// that may occur.
+// the http request was invalid somehow, so we return a "bad request"
+// the httpserver class listens for incoming http requests.  when one
+// the maximum number of waiting incoming connections to queue.
+the pathing assumes you start in the root of your project unless given a non-relative path
+// the "portnumber" parameter specifies the port number on which the
+the readstring method shows how to read a string from an inputstream.
+the server class is the "main" class for the server (i.e., it contains the
+// the "server" field contains the httpserver instance for this program,
+the server should accept incoming client connections.
+the single event object with the specified id
+the single person object with the specified id
+// the status code and any defined headers.
+the structure for this connection is driver:language:path
+the writestring method shows how to write a string to an outputstream.
+// this allows a system administrator (or you) to know what is happening
+this.authtoken = authtoken;
+this.city = city;
+this.conn = conn;
+this.country = country;
+this.data = data;
+this.descendant = descendant;
+this.email = email;
+this.eventid = eventid;
+this.events = events;
+this.eventtype = eventtype;
+this example demonstrates the basic structure of the family map server
+this.father = father;
+this.firstname = firstname;
+this.gender = gender;
+this.generations = generations;
+this is how we set up the driver for our database
+this.lastname = lastname;
+this.latitude = latitude;
+// this line is necessary, but its function is unimportant for our purposes.
+this.longitude = longitude;
+this.message = message;
+// this method call will return immediately, and the "main" method
+// this method initializes and runs the server.
+this.mother = mother;
+this.password = password;
+this.personid = personid;
+this.person = person;
+this.persons = persons;
+this.spouse = spouse;
+this.token = token;
+this.username = username;
+this.users = users;
+this will commit the changes to the database
+this.year = year;
+throw e;
+@throws dataaccessexception
+to be generated, and must be a non-negative integer
+//to fill in and give it a proper value. the first argument corresponds to the first
+// to the client.
+.touppercase().equals("get")
+.touppercase().equals("post")
+try
+type of event (birth, baptism, christening, marriage
+unable to close database connection
+unable to open connection to database
+userdao udao = new userdao(conn);
+user find(string
+user = null;
+= (user) o
+user (username) to which this person belongs
+user user = null;
+// using the httpserver class, you can easily make a java
+//using the statements built-in set(type) functions we can pick the question mark we want
+uuid uuid = uuid.randomuuid();
+varchar
+void handle(httpexchange exchange) throws ioexception
+void teardown()
+void writestring(string
+//we can structure our string to be similar to a sql command, but if we insert question
+westenm
+when the server runs, all command-line arguments are passed in to server.main.
+// which is initialized in the "run" method below.
+while ((len = sr.read(buf)) > 0)
+while (rs.next())
+while (rs.next() == true)
+// while this value is necessary, for our purposes it is unimportant.
+will rollback any changes we made during this connection
+// with appropriate http responses.
+writestring(respdata, respbody);
+// write the json string to the output stream.
+year in which event occurred
