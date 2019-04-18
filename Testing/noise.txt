@@ -1,11 +1,26 @@
 \/\*\*
 \*\/
+-110.1167
+-111.6585
+115 ;
+14 )
+16 ;
+283 );
+40.2338,
+40.7500
+66 ));
+adapter.setdropdownviewresource(android.r.layout.simple_spinner_dropdown_item);
+adapterview.onitemselectedlistener()
+.addrequestproperty
 @after
 although it is for a fictitious
 an http server in any java program.
+args = new bundle();
+assertequals
 assertequals(4, 2 + 2);
 assertfalse
 assertnotnull
+assertnull
 asserttrue
 authtoken authtoken = null;
 authtoken = null;
@@ -15,7 +30,19 @@ automatically generated file
 basic elements of the server.
 @before
 boolean commit = true;
+boolean islastchild, view convertview, viewgroup parent)
 boolean success = false;
+break;
+bundle savedinstancestate)
+button.setenabled(
+case "blue":
+case "green":
+case "hybrid":
+case "normal":
+case "red":
+case "satellite":
+case "terrain":
+case "yellow":
 catch (classnotfoundexception e)
 catch(classnotfoundexception e)
 catch (dataaccessexception e)
@@ -24,6 +51,7 @@ catch (exception e)
 catch(exception e)
 catch (ioexception e)
 catch(ioexception e)
+catch (malformedurlexception e)
 catch (sqlexception e)
 catch(sqlexception e)
 char\[\] buf = new char[1024];
@@ -32,6 +60,7 @@ check to see if an "authorization" header is present
 city in which event occurred
 class.forname(driver);
 .clear();
+.cleartables();
 client's fault), so we return an "internal server error" status code
 .close();
 closeconnection(commit);
@@ -42,6 +71,7 @@ close the output stream.  this is how java knows we are done
 commit = false;
 comparetest
 conn = drivermanager.getconnection(connection_url);
+.connect();
 connection conn;
 connection connection;
 connection = null;
@@ -63,6 +93,11 @@ createcontext("/user/register", new registerhandler());
 .createstatement();
 createtables();
 creating contexts
+\\"cs240\\"
+currentevent = event;
+dao.insert(event);
+dao.insert(person);
+dao.insert(user);
 dao = null;
 daotest
 dataaccessexception()
@@ -73,46 +108,82 @@ db.cleartables();
 db.createtables();
 db = new database();
 db = null;
+default:
 delete from events where descendant = ?;";
 delete(string eventid) throws dataaccessexception
 diditwork
 display/log the request json data
 display/log the stack trace
+drawable gendericon;
 else
 error encountered while finding
 event event;
 event event = (event)
 event event = null;
 even though the "main" method has completed, the program will continue
+\\"events\\":
 events.add(event);
+events = new arraylist<>();
+eventtypes = new arraylist<>();
 example local unit test, which will execute on the development machine (host).
 exchange.getresponsebody().close();
 exchange.sendresponseheaders(
+.execute();
 extract the auth token from the "authorization" header
+: \\"f\\",
 file file = new file(filepath);
 files.copy
 fillresponse response = null;
 final string connection_url = "jdbc:sqlite:familymap.sqlite";
 final string driver = "org.sqlite.jdbc";
+findfragmentbyid(r.id.map);
+\\"fixed this thing\\"
+flag_activity_clear_top
+flag_activity_single_top
+fm.begintransaction()
+for (event event : events)
 for (int i = 0; i < events.size(); i++)
 for (int i = 0; i < persons.size(); i++)
 for (int i = 0; i < users.size(); i++)
+for (person person : persons)
+for (polyline line : lines)
 for processing.
 for the program will also complete.
 for this server, the only command-line argument is the port number on which
 forwards the request to the handler for that url path.
+fragment = new loginfragment();
+fragment = new mapfragment();
+fragment == null)
+fragment.setarguments(args);
 generated person and event data.
+.get(childposition);
+.getfather() != null)
+.getinputstream();
+.getmapasync(this);
+.getmother() != null)
+.getoutputstream();
+getsupportfragmentmanager
 get the http request headers
 get the request body input strea
 get the response body output stream.
 gson gson = new gson();
 headers reqheaders = exchange.getrequestheaders();
 httpserver is the class that actually implements the http network
+iconify.with(new fontawesomemodule
 if (commit)
+if (connection.getresponsecode() == httpurlconnection.http_ok)
+if (event.geteventid().equals(eventid))
 if (event == null)
 if (exchange.getrequestmethod().tolowercase()
 if (file.exists())
+if (item.getitemid() == android.r.id.home)
+if (mmap != null)
+if (person.getfatherid() != null)
+if (person.getgender().equals("m"))
+if (person.getmotherid() != null)
+if (person.getpersonid().equals(personid))
 if (person == null)
+if (person != null)
 if (reqheaders.containskey("authorization"))
 if (rs.next())
 if (rs.next() == true)
@@ -120,8 +191,11 @@ if (!success)
 if (token == null)
 if (user == null)
 if we find out something went wrong, pass a false into closeconnection and this
+i_hate_formatting
 import android
+import com.google
 import com.google.gson.gson;
+import com.joan
 import com.sun.net.httpserver.*;
 import dao
 import dataaccess
@@ -129,6 +203,7 @@ import handlers
 import java.
 import javax.xml.crypto.data;
 import model
+import org.json
 import org.junit
 import org.junit.runner.runwith;
 import org.junit.test;
@@ -136,8 +211,10 @@ import request
 import result
 import service
 import static org.junit.assert.*;
+im_really_good_at_names
 incoming client connections.
 indicate that we are using the default "executor".
+// inflate the layout for this fragment
 initializing http server
 inputstreamreader sr = new inputstreamreader(is);
 inputstream reqbody = exchange.getrequestbody();
@@ -150,32 +227,43 @@ int hashcode()
 in the background.
 int len;
 is received, it looks at the url path inside the http request, and
+itemview.setonclicklistener(new
 its http handlers.
 java provides an httpserver class
+javarocks
 just like "new", this method returns a reference to the new object.
 list<event> data;
 list<event> events;
 list<event> events = new arraylist
 list<person> data;
 list<person> persons = new arraylist
+list<polyline> lines
 list<user> users;
 loadrequest(list<user> users, list<person> persons, list<event> events)
 loadresponse response = null;
 log message indicating
+: \\"m\\"
+map = googlemap;
+maptype =
 marks we can change them later with help from the statement
 max_waiting_connections
 messages containing information about its internal activities.
 method for the server program
+\\n" +
 new authtokendao(conn);
 new dataaccessexception("error encountered while finding token");
 new dataaccessexception("sql error encountered while clearing tables");
 new eventdao(conn);
 new inetsocketaddress
+new intent(getactivity(), personactivity.class);
+new intent(this, mainactivity.class);
 new persondao(conn);
 new server().run
+= new url(
 new userdao(conn);
 // next we send the json data in the http response body.
 (non-empty string)
+@nonnull
 // now that the status code and headers have been sent to the client,
 objects.equals(
 // on which the server should accept incoming client connections.
@@ -192,32 +280,52 @@ package request
 package service
 @param
 parameter must be a user already registered with the server
+\\"parker\\"
+\\"patrick\\"
+patrick_spencer
 person find(string
+person.getfatherid());
+person.getmotherid());
 person = null;
 = (person) o
 person person = null;
+\\"persons\\":
 persons.add(person);
+persons = new arraylist<>();
 populates the server's database with generated data for the specified user
 posted user, person, and event data into the database
 .preparestatement(sql);
 .printstacktrace();
+private arraylist<person> persons;
 private authtokendao authtokendao;
 private database db;
 private double latitude;
 private double longitude;
+private edittext email;
+private edittext firstname;
+private edittext lastname;
+private edittext password;
+private edittext serverhost;
+private edittext serverport;
+private edittext username;
 private eventdao eventdao;
 private event\[\] events;
 private float latitude;
 private float longitude;
+private googlemap googlemap;
+private googlemap m
 private httpserver server;
 private integer year
 private int generations;
 private int year;
 private list<location> locations;
 private list<person> persons;
+private loginrequest loginrequest;
 private persondao persondao;
 private person\[\] data;
+private person person;
 private person\[\] persons;
+private registerrequest registerrequest;
 private string authtoken;
 private string city;
 private string country;
@@ -226,26 +334,40 @@ private string email;
 private string eventid;
 private string eventtype;
 private string father;
+private string fatherid;
 private string firstname;
 private string gender;
 private string lastname;
 private string message;
 private string mother;
+private string motherid;
 private string password;
 private string personid;
 private string readstring(inputstream is) throws ioexception
 private string spouse;
+private string spouseid;
 private string token;
 private string username;
 private userdao userdao;
+private user user;
 private user\[\] users;
 private void run(string portnumber)
 // program that can receive incoming http requests, and respond
+protected void oncreate(bundle savedinstancestate)
 // protocol (be glad you don't have to).
+\\"provo\\"
+public arraylist<event> getevents()
+public arraylist<person> getpersons()
+public authtoken()
 public authtokendao(connection conn)
 public authtoken(string token, string username)
 public boolean equals(object
+public boolean hasstableids()
 public boolean insert(person person) throws dataaccessexception
+public boolean ischildselectable(int groupposition, int childposition)
+public boolean oncreateoptionsmenu(menu menu)
+public boolean onmarkerclick(marker
+public boolean onoptionsitemselected(
 public class authtoken
 public class authtokendao
 public class clearhandler implements httphandler
@@ -264,6 +386,7 @@ public class fillrequest
 public class fillresponse
 public class fillresult
 public class fillservice
+public class filteractivity extends appcompatactivity
 public class loadhandler implements httphandler
 public class loadrequest
 public class loadresponse
@@ -271,11 +394,14 @@ public class loadresult
 public class loadservice
 public class location
 public class locations
+public class loginfragment extends fragment
 public class loginhandler implements httphandler
 public class loginrequest
 public class loginresponse
 public class loginresult
 public class loginservice
+public class mainactivity extends appcompatactivity
+public class mapfragment extends fragment implements onmapreadycallback
 public class names
 public class person
 public class persondao
@@ -285,7 +411,9 @@ public class registerresponse
 public class registerresult
 public class registerservice
 public class result
+public class searchactivity extends appcompatactivity
 public class server
+public class settingsactivity extends appcompatactivity
 public class user
 public class userdao
 public clearresponse(string message)
@@ -293,9 +421,12 @@ public clearservice()
 public connection openconnection() throws dataaccessexception
 public double getlatitude()
 public double getlongitude()
+public event()
 public eventdao(connection conn)
 public event find(string eventid) throws dataaccessexception
+public event getevent()
 public event\[\] getevents()
+public fillrequest()
 public fillrequest(string username, int generations)
 public fillresponse(string message)
 public fillservice()
@@ -303,28 +434,45 @@ public final class buildconfig
 public float getlatitude()
 public float getlongitude()
 public integer getyear()
+public int getchildrencount(int groupposition)
+public int getgroupcount()
+public int getitemcount()
 public int getyear()
 public list<event> getdata()
 public list<event> getevents()
 public list<person> getdata()
 public list<person> getpersons()
 public list<user> getusers()
+public loadrequest()
 public loadresponse(string message)
 public location\[\] getdata()
+public loginfragment()
 public loginrequest(string username, string password)
 public loginresponse(string authtoken, string username, string personid)
+public long getchildid(int groupposition, int childposition)
+public long getgroupid(int groupposition)
+public mapfragment()
+public object getchild(int groupposition
+public object getgroup(int groupposition)
+public person()
 public persondao(connection conn)
 public person\[\] getdata()
+public person getperson()
 public person\[\] getpersons()
 public person(string personid, string descendant, string firstname, string lastname, string gender)
 public person(string personid, string descendant, string firstname, string lastname, string gender, string father, string mother, string spouse)
 public registerrequest()
 public registerrequest(string username, string password, string email, string firstname, string lastname, string gender)
 public registerresponse(string authtoken, string username, string personid)
+public static final boolean debug = boolean.parseboolean("true");
+public static final int textappearance
+public static final int toolbar
 public static final int version_code = 1;
+public static final int viewbackgroundhelper
 public static final string build_type = "debug";
 public static final string flavor = "";
 public static final string version_name = "1.0";
+public static mapfragment newinstance()
 public static void main(string\[\] args)
 public string getauthtoken()
 public string getcity()
@@ -335,20 +483,29 @@ public string getemail()
 public string geteventid()
 public string geteventtype()
 public string getfather()
+public string getfatherid()
 public string getfirstname()
 public string getgender()
 public string getlastname()
+public string getmaptype()
 public string getmessage()
 public string getmother()
+public string getmotherid()
 public string getpassword()
 public string getpersonid()
 public string getspouse()
+public string getspouseid()
 public string gettoken()
 public string getusername()
+public user()
 public userdao(connection conn)
 public user\[\] getusers()
 public user(string username, string password, string email, string firstname
+public view getchildview(int groupposition
+public view oncreateview(layoutinflater
 public void addition_iscorrect()
+public void aftertextchanged(editable s)
+public void beforetextchanged(
 public void clear()
 public void cleartables() throws dataaccessexception
 public void closeconnection(boolean commit) throws dataaccessexception
@@ -362,6 +519,17 @@ public void insertfail()
 public void insertfail() throws exception
 public void insertpass()
 public void insertpass() throws exception
+public void oncheckedchanged(compoundbutton
+public void onclick(view
+public void onclick(view v)
+public void oncreate(bundle savedinstancestate)
+public void oncreateoptionsmenu(menu menu, menuinflater inflater)
+public void ondetach()
+public void onitemselected(adapterview
+public void onmapready(googlemap googlemap)
+public void onnothingselected(adapterview<?> parent)
+public void onresume()
+public void ontextchanged(
 public void setauthtoken(string authtoken)
 public void setcity(string city)
 public void setcountry(string country)
@@ -369,9 +537,12 @@ public void setdata(list<event> data)
 public void setdata(list<person> data)
 public void setdescendant(string descendant)
 public void setemail(string email)
+public void setevent(event event)
 public void seteventid(string eventid)
+public void setevents(arraylist<event> events)
 public void setevents(list<event> events)
 public void seteventtype(string eventtype)
+public void setfatherid(string fatherid)
 public void setfather(string father)
 public void setfirstname(string firstname)
 public void setgender(string gender)
@@ -380,11 +551,16 @@ public void setlatitude(double latitude)
 public void setlatitude(float latitude)
 public void setlongitude(double longitude)
 public void setlongitude(float longitude)
+public void setmaptype(string maptype)
 public void setmessage(string message)
+public void setmotherid(string motherid)
 public void setmother(string mother)
 public void setpassword(string password)
 public void setpersonid(string personid)
+public void setperson(person person)
+public void setpersons(arraylist<person> persons)
 public void setpersons(list<person> persons)
+public void setspouseid(string spouseid)
 public void setspouse(string spouse)
 public void settoken(string token)
 public void setup() throws exception
@@ -398,10 +574,14 @@ question mark found in our sql string
 random rand = new random();
 rather than calling "new" directly, we instead create
 Read JSON string from the input stream
+readstring(respbody);
 registerhandlers(httpserver server)
 registerhandlers(server);
 registerresponse response = null;
 registerresult registerresult = registerservice.register(registerrequest);
+.remove();
+request = new loginrequest();
+request = new registerrequest();
 respbody.close();
 result = loadservice.load(loadrequest);
 result = loginservice.login(loginrequest);
@@ -410,10 +590,12 @@ resultset rs = null;
 @return
 return;
 return authtoken;
+return childposition;
 return city;
 return commit;
 return conn;
 return connection;
+return convertview;
 return country;
 return data;
 return descendant;
@@ -424,13 +606,19 @@ return events;
 return eventtype;
 return false;
 return father;
+return fatherid;
+return filteredevents;
 return firstname;
 return gender;
+return generations;
+return groupposition;
 return lastname;
 return latitude;
 return longitude;
+return maptype;
 return message;
 return mother;
+return motherid;
 return null;
 return objects.hash(
 return password;
@@ -441,13 +629,17 @@ return response;
 return result;
 return sb.tostring();
 return spouse;
+return spouseid;
 return success;
+return super.onoptionsitemselected(item);
 return token;
 return true;
 return user;
 return username;
 return users;
 return uuid.randomuuid().tostring();
+return v;
+return view;
 return year;
 .rollback();
 rs.close();
@@ -463,6 +655,7 @@ rs.getstring("personid"), rs.getfloat("latitude"), rs.getfloat("longitude"),
 rs = stmt.executequery();
 // running because the httpserver object we created is still running
 @runwith
+\\"salt lake city\\",
 sb.append(buf, 0, len);
 @see
 select \* from authtoken
@@ -480,15 +673,38 @@ service = new eventservice();
 service = new fillservice();
 service = new loadservice();
 service = new loginservice();
+service = new personservice();
 service = new registerservice();
 servicetest
 .setautocommit(false);
+setcontentview(r.layout.activity_event);
+setcontentview(r.layout.activity_filter);
+setcontentview(r.layout.activity_main);
+setcontentview(r.layout.activity_person);
+setcontentview(r.layout.activity_search);
+setcontentview(r.layout.activity_settings);
+.setdooutput(
+sethasoptionsmenu(false);
+sethasoptionsmenu(true);
+.setmaptype(googlemap.map_type_
+.setonclicklistener(new
+setonmarkerclicklistener(new
+setonmarkerclicklistener(this
+.setrequestmethod("get");
+.setrequestmethod("post");
+\\"sheila\\"
+sheila_family_map
+sheila_parker
+\\"sheila@parker.com\\"
 should contain one command-line argument, which is the port number
 // since the server has no "user interface", it should display "log"
 // some kind of internal error has occurred inside the server (not the
+\\"spencer\\"
 sql error encountered while creating tables
+startactivity(intent);
 // start a transaction
 start a transaction
+\\"started family map\\"
 starting server
 // start sending the http response to the client, starting with
 // status code to the client.
@@ -496,13 +712,17 @@ stmt.executeupdate(
 stmt.setdouble(
 stmt.setint(
 stmt.setstring(
+string authtoken;
 string authtoken = reqheaders.getfirst("authorization");
 string authtoken = uuid.tostring();
 stringbuilder sb = new stringbuilder();
 string city;
 string\[\] data;
+string eventid;
 (string: “f” or “m”)
+string gender;
 string gender, string father, string mother, string spouse)
+string personid;
 string personid = person.getpersonid();
 string personid = uuid.tostring();
 string portnumber = args\[0\];
@@ -511,10 +731,18 @@ string respdata = gson.tojson(response);
 success = true;
 super();
 super(message);
+super.oncreateoptionsmenu(menu, inflater);
+super.oncreate(savedinstancestate);
+super.ondetach();
+super.onresume();
 super(success, message);
 sw.flush();
+switch (color)
+switch (item.getitemid())
 sw.write(str);
 system.out.println(reqdata);
+</table>
+<table>
 // take cs 460 for a deeper understanding of what it means.
 // tells the httpserver to start accepting incoming client connections.
 @test
@@ -541,11 +769,13 @@ this.country = country;
 this.data = data;
 this.descendant = descendant;
 this.email = email;
+this.event = event;
 this.eventid = eventid;
 this.events = events;
 this.eventtype = eventtype;
 this example demonstrates the basic structure of the family map server
 this.father = father;
+this.fatherid = fatherid;
 this.firstname = firstname;
 this.gender = gender;
 this.generations = generations;
@@ -557,16 +787,20 @@ this.longitude = longitude;
 this.message = message;
 // this method call will return immediately, and the "main" method
 // this method initializes and runs the server.
+this.motherid = motherid;
 this.mother = mother;
 this.password = password;
+this.people = people;
 this.personid = personid;
 this.person = person;
 this.persons = persons;
+this.spouseid = spouseid;
 this.spouse = spouse;
 this.success = success;
 this.token = token;
 this.username = username;
 this.users = users;
+this.user = user;
 this will commit the changes to the database
 this.year = year;
 throw e;
@@ -576,20 +810,24 @@ to be generated, and must be a non-negative integer
 // to the client.
 .touppercase().equals("get")
 .touppercase().equals("post")
+<tr><td>
 try
 type of event (birth, baptism, christening, marriage
 unable to close database connection
 unable to open connection to database
 userdao udao = new userdao(conn);
 user find(string
+user = new user();
 user = null;
 = (user) o
+\\"users\\":
 user (username) to which this person belongs
 user user = null;
 // using the httpserver class, you can easily make a java
 //using the statements built-in set(type) functions we can pick the question mark we want
 uuid uuid = uuid.randomuuid();
 varchar
+view v = inflater.inflate
 void handle(httpexchange exchange) throws ioexception
 void teardown()
 void writestring(string
@@ -603,6 +841,8 @@ while (rs.next() == true)
 // while this value is necessary, for our purposes it is unimportant.
 will rollback any changes we made during this connection
 // with appropriate http responses.
+writestring(reqdata, reqbody);
 writestring(respdata, respbody);
 // write the json string to the output stream.
+\\"year\\": 201
 year in which event occurred
