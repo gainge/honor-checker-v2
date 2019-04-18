@@ -11,9 +11,8 @@ extractUrl() {
 }
 
 
-
-if [[ "$#" -ne 2 ]]
-then
+# Check args
+if [[ "$#" -ne 2 ]]; then
 	echo "usage: $0 <URL> <TARGET DIRECTORY>"
 	exit 1
 fi
@@ -29,11 +28,11 @@ if [[ ! -d $TARGET_DIR ]]; then
 fi
 
 # Clean up the URL so it's ready for cloning
-CLEANED=$(extractUrl "$URL")
+URL=$(extractUrl "$URL")
 
 
 # Download the file to <username>.zip
-USER=$(echo $CLEANED | sed 's@[a-zA-Z]*:\/\/github\.com\/\([a-zA-Z]*\)\/\([a-zA-Z]*\)@\1_\2@' )
+USER=$(echo $URL | sed 's@[a-zA-Z]*:\/\/github\.com\/\([a-zA-Z]*\)\/\([a-zA-Z]*\)@\1_\2@' )
 
 # Create a fresh target dir and final java file
 TARGET_DIR="$TARGET_DIR/$USER"
@@ -51,10 +50,14 @@ touch $ALLJAVA
 # Clone the repo into the temp directory
 git clone $URL $TEMP # &>/dev/nul # add to suppress output
 
-# extract all the sick nasty java files and build the final java file
-find $TEMP -name '*.java' -not -path "*app/build*" -exec cat {} \; >"$ALLJAVA"
+if [[ -d $TEMP ]]; then
+	# extract all the sick nasty java files and build the final java file
+	find $TEMP -name '*.java' -not -path "*app/build*" -exec cat {} \; >"$ALLJAVA"
 
-# Clean up after ourselves
-rm -rf $TEMP
+	# Clean up after ourselves
+	rm -rf $TEMP
 
-echo $ALLJAVA
+	echo $ALLJAVA
+else
+	echo "### Download failed! ###"
+fi
