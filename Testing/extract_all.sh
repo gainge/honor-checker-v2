@@ -18,6 +18,6 @@ for file in "$1"/*.zip;
 do
   file=$(realpath -m --relative-to="${PWD}" $file)
   echo "Processing: [$file]"
-  ./extract_java.sh $file $TARGET_DIR
+  ./extract_java.sh "$file" "$TARGET_DIR"
   echo "Done"
 done
