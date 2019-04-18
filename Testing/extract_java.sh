@@ -17,8 +17,8 @@ STUDENT_CODE_DIR="$2"
 NETID=${FILENAME%.*}
 NETID=${NETID#*/}
 NETID=${NETID%%/*}
-NETID=${NETID%_[a-zA-Z]*}
-NETID=${NETID##[a-zA-Z]*_}
+PARTS=(${NETID//_/ })
+NETID=${PARTS[2]}
 
 # Make sure our directoies are set
 if [[ ! -d "$STUDENT_CODE_DIR" ]]
@@ -40,7 +40,7 @@ touch $ALLJAVA
 echo "Extracting java source..."
 EXTRACTED="temp/"
 mkdir "$EXTRACTED"
-unzip $FILENAME -d $EXTRACTED -x "*.jar" "*.html" "*.json" "*.zip" "*.css" ".class" ".xml" "app/src/main/res/*" "app/build/" &>/dev/null
+unzip "$FILENAME" -d $EXTRACTED -x "*.jar" "*.html" "*.json" "*.zip" "*.css" "*.class" "*.xml" "*.png" "**/app/src/main/res/*" "**/app/build/*" "**/.gradle/*" "**/app/src/debug/*" &>/dev/null
 
 # Pull out only java files
 find $EXTRACTED -name '*.java' -exec cat {} \; >"$ALLJAVA"
