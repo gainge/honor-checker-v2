@@ -7,6 +7,7 @@ printHeader() {
 
   HEADER_LEN=$(($len + 4))
 
+  printf '\n'
   printf '=%.0s' $( seq 1 $HEADER_LEN )
   printf "\n"
 
@@ -14,8 +15,6 @@ printHeader() {
   printf "\n"
 
   printf '=%.0s' $( seq 1 $HEADER_LEN )
-
-  printf '\n'
 
   echo
 }
@@ -146,8 +145,9 @@ printHeader "Cleaning Code"
 ./clean_all.sh "$REPO_CODE"
 ./clean_all.sh "$STUDENT_CODE"
 
-
-
+# 4) Compare the files!  Wahoo!
+printHeader "Comparing Codebases"
+./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR"
 
 
 

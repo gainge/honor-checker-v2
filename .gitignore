@@ -1,4 +1,5 @@
 Testing/repos/
 *.zip
 *.csv
-
+*.tar.gz
+*.tar
