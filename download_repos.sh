@@ -30,6 +30,4 @@ do
   echo -e "\tDone! [$FILENAME]"
 	echo
 done < $URLS
-echo "============================================"
 echo "Repositories downloaded to ./$REPO_DIR/"
-echo "============================================"
