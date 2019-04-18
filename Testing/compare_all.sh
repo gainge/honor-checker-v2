@@ -62,9 +62,8 @@ getNumMatches() {
   local FILE1=$1
   local FILE2=$2
 
-  # Check the matches
-  # local NUM_MATCHES=$(comm -12 $FILE1 $FILE2 | wc -l) # Dang I guess this wasn't working like we expected
-  local NUM_MATCHES=$(grep -i -F -o -f $FILE2 $FILE1 | sort | uniq -c | sed 's/^ *//' | wc -l)
+  # Check the matches using our comparison script
+  local NUM_MATCHES=$(./compare_java.sh "-c" "$FILE1" "$FILE2")
 
   echo $NUM_MATCHES
 }
