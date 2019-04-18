@@ -36,14 +36,18 @@ USER=$(echo $URL | sed 's@[a-zA-Z]*:\/\/github\.com\/\([a-zA-Z]*\)\/\([a-zA-Z]*\
 
 # Create a fresh target dir and final java file
 TARGET_DIR="$TARGET_DIR/$USER"
+ALLJAVA="$TARGET_DIR/alljava.txt"
+
+if [[ -f $ALLJAVA ]]; then
+	echo $ALLJAVA
+	exit 0 # Do nothing, it's already been made
+fi
+
 if [[ -d $TARGET_DIR ]]; then
 	rm -rf $TARGET_DIR
 fi
 
 mkdir $TARGET_DIR
-
-ALLJAVA="$TARGET_DIR/alljava.txt"
-
 touch $ALLJAVA
 
 
