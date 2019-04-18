@@ -31,8 +31,8 @@ fi
 FULL_STUDENT_DIR="$STUDENT_CODE_DIR/$NETID"
 ALLJAVA="$FULL_STUDENT_DIR/alljava.txt"
 
-if [[ -f ALLJAVA ]]; then
-	echo "$ALLJAVA already exists, exiting..."
+if [[ -f $ALLJAVA ]]; then
+	echo -e "\tFile [$ALLJAVA] already exists, exiting..."
 	exit 1
 fi
 
