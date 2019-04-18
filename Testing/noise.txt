@@ -708,10 +708,10 @@ start a transaction
 starting server
 // start sending the http response to the client, starting with
 // status code to the client.
-stmt.executeupdate(
-stmt.setdouble(
-stmt.setint(
-stmt.setstring(
+.executeupdate(
+.setdouble(
+.setint(
+.setstring(
 string authtoken;
 string authtoken = reqheaders.getfirst("authorization");
 string authtoken = uuid.tostring();
