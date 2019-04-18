@@ -1,6 +1,27 @@
 #!/bin/bash
 
-# TODO: Eventuall Add semester Support...  All you'd be doing is changing how you route student code
+
+printHeader() {
+  local MESSAGE="$1"
+  local len=${#MESSAGE}
+
+  HEADER_LEN=$(($len + 4))
+
+  printf '=%.0s' $( seq 1 $HEADER_LEN )
+  printf "\n"
+
+  printf "= $MESSAGE ="
+  printf "\n"
+
+  printf '=%.0s' $( seq 1 $HEADER_LEN )
+
+  printf '\n'
+
+  echo
+}
+
+
+# TODO: Eventually Add semester Support...  All you'd be doing is changing how you route student code
 
 ALLJAVA="alljava.txt"
 CLEANED_JAVA="cleaned.txt"
@@ -113,11 +134,17 @@ fi
 
 
 # 1) Download repositories to the correct directory
+printHeader "Dowloading repositories"
 ./download_repos.sh "$URLS" "$REPO_CODE"
 
 # 2) Extract student code into correct directory
+printHeader "Extracting Student Code"
 ./extract_all.sh "$BATCH_DIR" "$STUDENT_CODE"
 
+# 3) Clean the java files in preparation for comparison
+printHeader "Cleaning Code"
+./clean_all.sh "$REPO_CODE"
+./clean_all.sh "$STUDENT_CODE"
 
 
 
