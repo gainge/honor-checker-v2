@@ -113,4 +113,25 @@ fi
 
 
 # 1) Download repositories to the correct directory
-./download_repos "$URLS" "$REPO_CODE"
+./download_repos.sh "$URLS" "$REPO_CODE"
+
+# 2) Extract student code into correct directory
+./extract_all.sh "$BATCH_DIR" "$STUDENT_CODE"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Then we done!
