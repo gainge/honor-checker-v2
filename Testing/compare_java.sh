@@ -35,9 +35,7 @@ FILE=$1
 PATTERNS=$2
 
 if [[ "$c" == false ]] || [[ "$v" == true ]]; then
-  # echo $(grep -i -F -o -f $PATTERNS $FILE | sort | uniq -c | sed 's/^ *//')
-  # grep -i -F -o -f $PATTERNS $FILE | sort | uniq -c
-  grep -i -F -o -f $PATTERNS $FILE | sort | uniq -c | sed 's/^ *.[[:blank:]]//'
+  echo $(grep -i -F -o -f $PATTERNS $FILE | sort | uniq -c | sed 's/^ *.[[:blank:]]//')
 fi
 
 if [[ "$c" == true ]] || [[ "$v" == true ]]; then
