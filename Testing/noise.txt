@@ -129,6 +129,7 @@ example local unit test, which will execute on the development machine (host).
 exchange.getresponsebody().close();
 exchange.sendresponseheaders(
 .execute();
+.executeupdate(
 extract the auth token from the "authorization" header
 : \\"f\\",
 file file = new file(filepath);
@@ -497,6 +498,7 @@ public string getspouse()
 public string getspouseid()
 public string gettoken()
 public string getusername()
+public string tostring()
 public user()
 public userdao(connection conn)
 public user\[\] getusers()
@@ -684,14 +686,17 @@ setcontentview(r.layout.activity_person);
 setcontentview(r.layout.activity_search);
 setcontentview(r.layout.activity_settings);
 .setdooutput(
+.setdouble(
 sethasoptionsmenu(false);
 sethasoptionsmenu(true);
+.setint(
 .setmaptype(googlemap.map_type_
 .setonclicklistener(new
 setonmarkerclicklistener(new
 setonmarkerclicklistener(this
 .setrequestmethod("get");
 .setrequestmethod("post");
+.setstring(
 \\"sheila\\"
 sheila_family_map
 sheila_parker
@@ -708,10 +713,6 @@ start a transaction
 starting server
 // start sending the http response to the client, starting with
 // status code to the client.
-.executeupdate(
-.setdouble(
-.setint(
-.setstring(
 string authtoken;
 string authtoken = reqheaders.getfirst("authorization");
 string authtoken = uuid.tostring();
