@@ -29,7 +29,7 @@ for ((i = 0; i < $len; ++i)) do
     # Otherwise, clean things regularly
     echo "Cleaning Source File: $ALLJAVA"
     CLEANED="$CURRENT_DIR/cleaned.txt"
-    ./clean_java.sh $ALLJAVA $CLEANED
+    ./clean_java.sh "$ALLJAVA" "$CLEANED"
   fi
 
 done
