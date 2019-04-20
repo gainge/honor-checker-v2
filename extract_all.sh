@@ -15,7 +15,7 @@ if [[ "$#" -ge 2 ]]; then
 fi
 
 # Remove whitespace from file names
-for f in "$1"/*.zip; do mv "$f" "${f// /}"; done
+for f in "$1"/*.zip; do mv "$f" "${f// /}" 2>/dev/null; done # Suppress output as well
 
 for file in "$1"/*.zip;
 do
@@ -24,5 +24,5 @@ do
 
   # Extract the code
   ./extract_java.sh "$file" "$TARGET_DIR"
-  echo "Done"
 done
+echo "Done"
