@@ -30,9 +30,11 @@ fi
 # Clean up the URL so it's ready for cloning
 URL=$(extractUrl "$URL")
 
+# Check to see if the repo exists
+
 
 # Download the file to <username>.zip
-USER=$(echo $URL | sed 's@[a-zA-Z]*:\/\/github\.com\/\([a-zA-Z]*\)\/\([a-zA-Z]*\)@\1_\2@' )
+USER=$(echo $URL | sed 's@[a-zA-Z]*:\/\/github\.com\/\([_[:alnum:]-]*\)\/\([_[:alnum:]-]*\)@\1_\2@' )
 
 # Create a fresh target dir and final java file
 TARGET_DIR="$TARGET_DIR/$USER"
