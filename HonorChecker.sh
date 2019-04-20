@@ -68,6 +68,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# Determine if any options were given
 [[ "$clean" == true ]] || [[ "$extract" == true ]] || [[ "$download" == true ]] || [[ "$compare" == true ]]; opts=$?
 echo $opts
 
@@ -119,12 +120,9 @@ fi
 if [[ ! -f $NOISE ]] && ( [[ "$clean" == true ]] || [[ "$opts" == 1 ]] ); then
   echo "Noise file [$NOISE] not found, creating empty file"
   touch $NOISE
+  # Put in a temporary line so the cleaning script doesn't erase everything
+  echo "(Fill with noise patterns)" >> $NOISE
 fi
-
-
-
-
-
 
 
 
@@ -133,22 +131,31 @@ fi
 
 
 # 1) Download repositories to the correct directory
-printHeader "Dowloading repositories"
-./download_repos.sh "$URLS" "$REPO_CODE"
+if [[ "$download" == true ]] || [[ "$opts" == 1 ]]; then
+  printHeader "Dowloading repositories"
+  ./download_repos.sh "$URLS" "$REPO_CODE"
+fi
+
 
 # 2) Extract student code into correct directory
-printHeader "Extracting Student Code"
-./extract_all.sh "$BATCH_DIR" "$STUDENT_CODE"
+if [[ "$extract" == true ]] || [[ "$opts" == 1 ]]; then
+  printHeader "Extracting Student Code"
+  ./extract_all.sh "$BATCH_DIR" "$STUDENT_CODE"
+fi
+
 
 # 3) Clean the java files in preparation for comparison
-printHeader "Cleaning Code"
-./clean_all.sh "$REPO_CODE"
-./clean_all.sh "$STUDENT_CODE"
+if [[ "$clean" == true ]] || [[ "$opts" == 1 ]]; then
+  printHeader "Cleaning Code"
+  ./clean_all.sh "$REPO_CODE"
+  ./clean_all.sh "$STUDENT_CODE"
+fi
 
 # 4) Compare the files!  Wahoo!
-printHeader "Comparing Codebases"
-./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR"
-
+if [[ "$compare" == true ]] || [[ "$opts" == 1 ]]; then
+  printHeader "Comparing Codebases"
+  ./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR"
+fi
 
 
 
