@@ -31,6 +31,13 @@ fi
 URL=$(extractUrl "$URL")
 
 # Check to see if the repo exists
+export GIT_ASKPASS
+GIT_ASKPASS=true
+git ls-remote "$URL" > /dev/null 2>&1
+if [ "$?" -ne 0 ]; then
+    echo "[ERROR] Repository '$URL' Does not exist, exiting"
+    exit 1;
+fi
 
 
 # Download the file to <username>.zip
