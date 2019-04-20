@@ -5,7 +5,7 @@ extractUrl() {
 	local URL="$1"
 
 	# Make it look mighty fine
-	PARSED=$(echo $URL | sed 's@\(http[s]*:\/\/github\.com\/[a-zA-Z]*\/[a-zA-Z]*\)[\/]*.*@\1@')
+	PARSED=$(echo $URL | sed 's@\(http[s]*:\/\/github\.com\/[_[:alnum:]-]*\/[_[:alnum:]-]*\)[\/]*.*@\1@')
 
 	echo $PARSED
 }
