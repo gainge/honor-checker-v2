@@ -18,6 +18,16 @@ for file in "$1"/*.zip;
 do
   file=$(realpath -m --relative-to="${PWD}" $file)
   echo "Processing: [$file]"
+
+  # Clean file name + relocate if necessary
+  $cleaned=$(echo $file | sed 's/[[:blank:]()]*//g')
+
+  if [[ "$file" != "$cleaned" ]]; then
+    mv "$file" "$cleaned"
+    file=$cleaned
+  fi
+
+  # Extract the code
   ./extract_java.sh "$file" "$TARGET_DIR"
   echo "Done"
 done
