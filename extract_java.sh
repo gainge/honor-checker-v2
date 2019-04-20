@@ -15,6 +15,7 @@ STUDENT_CODE_DIR="$2"
 
 # extract the netID from the file
 NETID=${FILENAME%.*}
+NETID=$(echo $NETID | sed 's/[[:blank:][:space:]]//g' )
 PARTS=(${NETID//\// })
 NETID=${PARTS[-1]}
 NETID=${NETID##.*/}
@@ -46,7 +47,7 @@ touch $ALLJAVA
 echo "Extracting java source... [NetID: $NETID]"
 EXTRACTED="temp/"
 mkdir "$EXTRACTED"
-unzip "$FILENAME" -d $EXTRACTED -x "*.jar" "*.html" "*.json" "*.zip" "*.css" "*.class" "*.xml" "*.png" "**/app/src/main/res/*" "**/app/build/*" "**/.gradle/*" "**/app/src/debug/*" &>/dev/null
+unzip "$FILENAME" -d "$EXTRACTED" -x "*.jar" "*.html" "*.json" "*.zip" "*.css" "*.class" "*.xml" "*.png" "**/app/src/main/res/*" "**/app/build/*" "**/.gradle/*" "**/app/src/debug/*" &>/dev/null
 
 # Pull out only java files
 find $EXTRACTED -name '*.java' -exec cat {} \; >"$ALLJAVA"
