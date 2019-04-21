@@ -14,13 +14,15 @@ if [[ "$#" -ge 2 ]]; then
   TARGET_DIR=$2
 fi
 
+echo "Processin Files in: '$1'"
+
 # Remove whitespace from file names
 for f in "$1"/*.zip; do mv "$f" "${f// /}" 2>/dev/null; done # Suppress output as well
 
 for file in "$1"/*.zip;
 do
+  # Sanitize the input
   file=$(realpath -m --relative-to="${PWD}" $file)
-  echo "Processing: [$file]"
 
   # Extract the code
   ./extract_java.sh "$file" "$TARGET_DIR"

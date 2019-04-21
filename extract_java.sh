@@ -54,4 +54,4 @@ find $EXTRACTED -name '*.java' -exec cat {} \; >"$ALLJAVA"
 
 rm -rf "$EXTRACTED"
 
-echo "Finished!"
+echo -e "\tExtracted to [$ALLJAVA]"
