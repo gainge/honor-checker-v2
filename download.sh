@@ -64,7 +64,7 @@ git clone $URL $TEMP # &>/dev/nul # add to suppress output
 
 if [[ -d $TEMP ]]; then
 	# extract all the sick nasty java files and build the final java file
-	find $TEMP -name '*.java' -not -path "*app/build*" -exec cat {} \; >"$ALLJAVA"
+	find $TEMP -name '*.java' -not -path "*app/build*" -not -path "*joanzapata*" -exec cat {} \; >"$ALLJAVA"
 
 	# Clean up after ourselves
 	rm -rf $TEMP
