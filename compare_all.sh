@@ -88,6 +88,26 @@ compareFiles() {
 }
 
 
+# Check for optional student flag
+students=false
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+  key="$1"
+
+  case $key in
+      -s|--students)
+      students=true
+      shift # past flag I guess
+      ;;
+      *)    # unknown option
+      POSITIONAL+=("$1") # save it in an array for later
+      shift # past argument
+      ;;
+  esac
+done
+
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
 STUDENT_CODE_DIR="student-code-directories"
 REPO_DIR="repos"
 RESULT_DIR="./results"
@@ -143,18 +163,21 @@ for ((i = 0; i < $TOTAL; ++i)) do
   done
 
   # Following repositories, compare against the other students
-  for ((j = $TOTAL - 1; j > i; --j)) do
-    # don't compare students against themselves
-    if [[ j == i ]]; then
-      echo -n "-1" >> $RESULTS
-    else
-      CURRENT_STUDENT=${DIRECTORIES[$j]}
+  if [[ "$students" == "true" ]]; then
+    for ((j = $TOTAL - 1; j > i; --j)) do
+      # don't compare students against themselves
+      if [[ j == i ]]; then
+        echo -n "-1" >> $RESULTS
+      else
+        CURRENT_STUDENT=${DIRECTORIES[$j]}
 
-      OTHER_CLEANED=$(getCleanedJava $CURRENT_STUDENT)
+        OTHER_CLEANED=$(getCleanedJava $CURRENT_STUDENT)
 
-      compareFiles $RESULTS $CLEANED_SOURCE $OTHER_CLEANED
-    fi
-  done
+        compareFiles $RESULTS $CLEANED_SOURCE $OTHER_CLEANED
+      fi
+    done
+  fi
+
 
   # Legit, there's definitely a way to refactor this, but idk if it's that useful given the
   #   backwards iteration over the students array
