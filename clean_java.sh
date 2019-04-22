@@ -27,6 +27,11 @@ sed -i 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # convert java
 sed -i 's/^[[:blank:]]*\*[[:blank:]]*$//' $DESTINATION_FILE       # Remove lines with only asterisks
 sed -i 's/^[[:blank:]]*\/\*[[:blank:]]*$//' $DESTINATION_FILE     # Remove lines with only multiline comment header
 sed -i 's/^[[:blank:]]*static[[:blank:]]*$//' $DESTINATION_FILE   # Remove random static lines I guess (?)
+sed -i 's/^;[[:blank:]]*$//' $DESTINATION_FILE                                # Remove lines with various junk
+sed -i 's/^\/\/[[:blank:]]*$//' $DESTINATION_FILE
+sed -i 's/^);[[:blank:]]*$//' $DESTINATION_FILE
+sed -i 's/^)[[:blank:]]*$//' $DESTINATION_FILE
+sed -i 's/^));[[:blank:]]*$//' $DESTINATION_FILE
 sed -i '/^$/d' $DESTINATION_FILE                                  # Remove blank lines
 sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE                        # Lowercase
 
