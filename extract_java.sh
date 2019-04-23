@@ -47,7 +47,7 @@ touch $ALLJAVA
 echo "Extracting java source... [NetID: $NETID]"
 EXTRACTED="temp/"
 mkdir "$EXTRACTED"
-unzip "$FILENAME" -d "$EXTRACTED" -x "*.jar" "*.html" "*.json" "*.zip" "*.css" "*.class" "*.xml" "*.png" "**/joanzapata/*" "**/app/src/main/res/*" "**/app/build/*" "**/.gradle/*" "**/app/src/debug/*" &>/dev/null
+unzip "$FILENAME" "*.java" -d "$EXTRACTED" -x "*.jar" "*.html" "*.json" "*.zip" "*.css" "*.class" "*.xml" "*.png" "**/joanzapata/*" "**/app/src/main/res/*" "**/app/build/*" "**/.gradle/*" "**/app/src/debug/*" &>/dev/null
 
 # Pull out only java files
 find $EXTRACTED -name '*.java' -exec cat {} \; >"$ALLJAVA"
