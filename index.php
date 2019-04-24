@@ -18,6 +18,7 @@
     echo "<table id='results-table'>\n\n";
     $f = fopen("./Client/results/results.csv", "r");
     $headersRead = false;
+    $headers = array();
 
     while (($line = fgetcsv($f)) !== false) {
         if (!$headersRead) {
@@ -26,14 +27,16 @@
 
         echo "<tr>";
 
-        foreach ($line as $cell) {
+        foreach ($line as $col=>$cell) {
             $description = htmlspecialchars($cell);
             
             if (!$headersRead) {
                 // Strip leading directory
-                if (strpos($description, "/") > 0) {
+                if (strpos($description, "/") > 0 && $col != 0) {
                     $description = substr($description, strpos($description, "/") + 1);
                 }
+                array_push($headers, $description);
+
                 echo "<th>" . $description . "</th>";
             } else {
                 echo "<td>" . $description . "</td>";
@@ -43,6 +46,8 @@
         if (!$headersRead) {
             echo "</thead>";
             echo "<tbody>";
+
+            
         }
 
         $headersRead = true;
@@ -51,5 +56,10 @@
     fclose($f);
     echo "\n</tbody></table>";
     ?>
+
+    <!-- Save the headers to a js variable -->
+    <script>
+        var headers = <?php echo json_encode($headers) ?>;
+    </script>
 </body>
 </html>
