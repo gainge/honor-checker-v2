@@ -9,37 +9,84 @@
 40.2338,
 40.7500
 66 ));
+activities that contain this fragment must implement the
 adapter.setdropdownviewresource(android.r.layout.simple_spinner_dropdown_item);
 adapterview.onitemselectedlistener()
+add a marker in sydney
+// add an auth token to the request in the http "authorization" header
+addmarkers();
+addperson(person);
 .addrequestproperty
+.add(r.id.fragment_container, fragment)
+adds an event to the database
+adds a user to the database
 @after
 although it is for a fictitious
+// an exception was thrown, so display the exception's stack trace
 an http server in any java program.
+appcompatdelegate mdelegate;
 args = new bundle();
+args.putstring(arg_param1, param1);
+args.putstring(arg_param2, param2);
+args.putstring(arg_title, title);
+arrayadapter<charsequence> adapter = arrayadapter.createfromresource(this
+arraylist<event> getevents()
+arraylist<person> getpersons()
 assertequals
 assertequals(4, 2 + 2);
 assertfalse
 assertnotnull
 assertnull
 asserttrue
+", authtoken=
+authtoken authtoken;
 authtoken authtoken = null;
+authtoken = new authtoken(
 authtoken = null;
 (authtoken) o;
 authtoken token = null;
 automatically generated file
+baos.write(buffer, 0, length);
 basic elements of the server.
 @before
+bodyisemptycode =
+boolean clear()
 boolean commit = true;
+boolean equals(object
+boolean hasstableids()
+boolean insert(person person) throws dataaccessexception
+boolean ischildselectable(int groupposition, int childposition)
+boolean isinitiallyexpanded()
 boolean islastchild, view convertview, viewgroup parent)
-boolean success = false;
+boolean onchildclick(expandablelistview
+boolean oncreateoptionsmenu(menu menu)
+boolean onmarkerclick(marker
+boolean onoptionsitemselected(
+boolean onprepareoptionsmenu(
+boolean onquerytextchange(
+boolean onquerytextsubmit(
+boolean result;
+boolean success;
 break;
+buffer = new byte
+bundle bundle = new bundle();
+bundle.putstring("eventid", eventid);
 bundle savedinstancestate)
 button.setenabled(
+bytearrayoutputstream baos = new bytearrayoutputstream();
+case 0:
+case 1:
+case 2:
+case 3:
+case android.r.id.home:
 case "blue":
 case "green":
 case "hybrid":
 case "normal":
 case "red":
+case r.id.filter:
+case r.id.search:
+case r.id.settings:
 case "satellite":
 case "terrain":
 case "yellow":
@@ -49,17 +96,33 @@ catch (dataaccessexception e)
 catch(dataaccessexception e)
 catch (exception e)
 catch(exception e)
+catch (filenotfoundexception e)
 catch (ioexception e)
 catch(ioexception e)
 catch (malformedurlexception e)
+catch (numberformatexception e)
 catch (sqlexception e)
 catch(sqlexception e)
+catch (sqlexception ex)
 char\[\] buf = new char[1024];
 char\[\] buf = new char\[1024\];
+char getgender()
+// check to make sure that the http response from the server contains a 200
 check to see if an "authorization" header is present
+children.add(person);
+children = new arraylist<>();
 city in which event occurred
+// claim the route between atlanta and miami
+class appcompatpreferenceactivity
+class filteradapter extends recyclerview.adapter<filterholder>
 class.forname(driver);
+class location
 .clear();
+clearresult clear()
+clears all data from the database
+clears the database
+"clear succeeded."
+"clear succeeded";
 .cleartables();
 client's fault), so we return an "internal server error" status code
 .close();
@@ -67,19 +130,31 @@ closeconnection(commit);
 closeconnection(false);
 closeconnection(true);
 close the output stream.  this is how java knows we are done
+// close the request body output stream, indicating that the
+.colorres(r.color.femaleicon
+.colorres(r.color.maleicon
+colors = new hashmap<>();
 .commit();
 commit = false;
+communicating with other fragments
 comparetest
 conn = drivermanager.getconnection(connection_url);
 .connect();
 connection conn;
 connection connection;
+connection getconn()
 connection = null;
+connection openconnection() throws dataaccessexception
+// connect to the server and send the http request
 conn = null;
 context appcontext
+context = c;
 context of the app under test.
+continue;
 create and install the http handler for the url paths.
 create a new httpserver object.
+create an instance of this fragment.
+// create a url indicating where the server is running, and which
 createcontext("/clear
 createcontext("/event
 createcontext("/fill/", new fillhandler());
@@ -90,11 +165,17 @@ createcontext("/", new filehandler());
 createcontext("/person
 createcontext("/user/login", new loginhandler());
 createcontext("/user/register", new registerhandler());
+// create events
+// create people
+// create person
 .createstatement();
+create table if not exists
+// create tables
 createtables();
 creating contexts
 \\"cs240\\"
 currentevent = event;
+dao.addperson(person);
 dao.insert(event);
 dao.insert(person);
 dao.insert(user);
@@ -111,96 +192,225 @@ db = null;
 default:
 delete from events where descendant = ?;";
 delete(string eventid) throws dataaccessexception
+descendant = username;
+developer.android.com
 diditwork
 display/log the request json data
 display/log the stack trace
+double getlatitude()
+double getlongitude()
+double latitude;
+double longitude;
 drawable gendericon;
+drawlines();
+earliestevent = event;
+edittext memail;
+edittext mfirstname;
+edittext mlastname;
+edittext mpassword;
+edittext mserverhost;
+edittext mserverport;
+edittext musername;
+e.getmessage());
 else
+", email=
 error encountered while finding
+eventdao.addevent(event);
 event event;
 event event = (event)
+event event = new event(
 event event = null;
+event find(string eventid) throws dataaccessexception
+event\[\] getdata()
+event getevent()
+event\[\] getevents()
+event getevent(string eventid)
 even though the "main" method has completed, the program will continue
+event = null;
 \\"events\\":
 events.add(event);
+event.seteventtype(eventtype);
+event.setyear(year);
 events = new arraylist<>();
+events = new hashmap<>();
+events = null;
+events.put(event.geteventid(), event);
+events.remove(event);
+eventtypes.add(eventtype);
 eventtypes = new arraylist<>();
 example local unit test, which will execute on the development machine (host).
 exchange.getresponsebody().close();
 exchange.sendresponseheaders(
 .execute();
 .executeupdate(
+// extract json data from the http response body
 extract the auth token from the "authorization" header
+// extract the json string from the http request body
 : \\"f\\",
+father = null;
 file file = new file(filepath);
 files.copy
+filesystems.getdefault().getpath(
 fillresponse response = null;
+final class buildconfig
+finally
 final string connection_url = "jdbc:sqlite:familymap.sqlite";
 final string driver = "org.sqlite.jdbc";
 findfragmentbyid(r.id.map);
+finish();
+", firstname=
+firstname.settext(person.getfirstname());
 \\"fixed this thing\\"
 flag_activity_clear_top
 flag_activity_single_top
+float getlatitude()
+float getlongitude()
+float latitude;
+float longitude;
 fm.begintransaction()
+fm.findfragmentbyid(r.id.fragment_container);
+fontawesomeicons.fa_filter
+fontawesomeicons.fa_gear
+fontawesomeicons.fa_search
+for (event e : events)
 for (event event : events)
 for (int i = 0; i < events.size(); i++)
 for (int i = 0; i < persons.size(); i++)
 for (int i = 0; i < users.size(); i++)
+// format by putting an http "accept" header on the request (this is not
 for (person person : persons)
 for (polyline line : lines)
 for processing.
 for the program will also complete.
 for this server, the only command-line argument is the port number on which
 forwards the request to the handler for that url path.
+fragment createfragment()
+fragment fragment;
+fragmentmanager fm = getchildfragmentmanager();
 fragment = new loginfragment();
 fragment = new mapfragment();
 fragment == null)
 fragment.setarguments(args);
+fragment.setarguments(bundle);
+fragment to allow an interaction in this fragment to be communicated
+", gender=
+gender = "f";
+gender = "m";
 generated person and event data.
+generations = 4;
 .get(childposition);
+getdelegate().addcontentview(view, params);
+getdelegate().installviewfactory();
+getdelegate().invalidateoptionsmenu();
+getdelegate().onconfigurationchanged(newconfig);
+getdelegate().oncreate(savedinstancestate);
+getdelegate().ondestroy();
+getdelegate().onpostcreate(savedinstancestate);
+getdelegate().onpostresume();
+getdelegate().onstop();
+getdelegate().setcontentview(layoutresid);
+getdelegate().setcontentview(view);
+getdelegate().setcontentview(view, params);
+getdelegate().setsupportactionbar(toolbar);
+getdelegate().settitle(title);
 .getfather() != null)
 .getinputstream();
+getintent().getstringextra("eventid");
+.getmapasync(new onmapreadycallback()
 .getmapasync(this);
 .getmother() != null)
 .getoutputstream();
+get response body input stream
+gets a view that displays the data for the given child within the given
+gets a view that displays the given group. this view is only for the
+gets the data associated with the given child within the given group.
+gets the data associated with the given group.
+gets the id for the given child within the given group. this id must be
+gets the id for the group at the given position. this group id must be
+gets the number of children in a specified group.
+gets the number of groups.
+.getstring(arg_param
 getsupportfragmentmanager
+getsystemservice(context.layout_inflater_service);
 get the http request headers
+get the input stream containing the http response
+// get the input stream containing the http response body
+// get the output stream containing the http request body
 get the request body input strea
 get the response body output stream.
+google play services and returned
 gson gson = new gson();
+gson gson = new gsonbuilder()
+gson = new gson();
 headers reqheaders = exchange.getrequestheaders();
++ http.getresponsemessage());
 httpserver is the class that actually implements the http network
+httpserver server;
 iconify.with(new fontawesomemodule
+id = uuid.randomuuid();
+if (bundle != null)
 if (commit)
 if (connection.getresponsecode() == httpurlconnection.http_ok)
+if (context instanceof onfragmentinteractionlistener).
+if (convertview == null)
+if(convertview == null)
+if (currentperson != null)
+if (e != null)
 if (event.geteventid().equals(eventid))
+if (event.getpersonid().equals(personid))
+if (eventid == null)
+if (eventid != null)
 if (event == null)
+if (event != null)
 if (exchange.getrequestmethod().tolowercase()
+if (father != null)
 if (file.exists())
-if (item.getitemid() == android.r.id.home)
+if (gender.equals("m"))
+if (getarguments() != null)
+if google play services is not installed on the device
+if (groupposition == 0)
+if (http.getresponsecode() == httpurlconnection.http_ok)
+if (instance == null)
+if (ischecked)
 if (mmap != null)
+if (mother != null)
+if (obj == null)
+if (o instanceof event)
 if (person.getfatherid() != null)
 if (person.getgender().equals("m"))
+if (person.getgender() == 'm')
 if (person.getmotherid() != null)
 if (person.getpersonid().equals(personid))
+if (person.getspouseid() != null)
+if (personid == null)
+if (personid != null)
+if(personid == null)
+if(personid != null)
 if (person == null)
 if (person != null)
+if(person == null)
+if (p != null)
 if (reqheaders.containskey("authorization"))
 if (rs.next())
 if (rs.next() == true)
+if (spouse != null)
 if (!success)
 if (token == null)
 if (user == null)
+if (user != null)
 if we find out something went wrong, pass a false into closeconnection and this
 i_hate_formatting
+imageview icon
 import android
+import com.bignerdranch.
 import com.google
 import com.google.gson.gson;
 import com.joan
 import com.sun.net.httpserver.*;
 import dao
 import dataaccess
-import handlers
+import database.database;
+import handler
 import java.
 import javax.xml.crypto.data;
 import model
@@ -209,86 +419,214 @@ import org.junit
 import org.junit.runner.runwith;
 import org.junit.test;
 import request
+import response
 import result
 import service
 import static org.junit.assert.*;
 im_really_good_at_names
 incoming client connections.
+// indicate that this request will contain an http request body
+// indicate that this request will not contain an http request body
 indicate that we are using the default "executor".
+// indicating that the response is complete.
+inflater.inflate(r.layout.fragment_map
 // inflate the layout for this fragment
 initializing http server
 inputstreamreader sr = new inputstreamreader(is);
 inputstream reqbody = exchange.getrequestbody();
 insert into events (eventid, descendant, personid, latitude, longitude, " +
 inside the server, which can be useful
+inside the supportmapfragment. this method will only be triggered
+instance = new model();
 instrumented test
+integer getyear()
 integer not null
+intent intent;
+intent intent = getintent();
+intent intent = new intent(getactivity(), mainactivity.class);
+intent intent = new intent(personactivity.this, mainactivity.class);
+intent intent = new intent(personactivity.this, personactivity.class);
+intent intent = new intent(searchactivity.this, personactivity.class);
+intent intent = new intent(settingsactivity.this, mainactivity.class);
+intent = new intent(getactivity(), filteractivity.class);
+intent = new intent(getactivity(), mainactivity.class);
+intent = new intent(getactivity(), searchactivity.class);
+intent = new intent(getactivity(), settingsactivity.class);
+intent = new intent(personactivity.this, personactivity.class);
+interface context
+interface onfragmentinteractionlistener
+int generation = 0;
 int generations = 4;
+int getchildrencount(int groupposition)
+int getgenerations()
+int getgroupcount()
+int getitemcount()
+int getserverport()
+int getyear()
 int hashcode()
 in the background.
 int len;
+int port = 8080;
+int serverport;
 is received, it looks at the url path inside the http request, and
+item.getitemid() == android.r.id.home)
 itemview.setonclicklistener(new
+itemview.setonclicklistener(this);
 its http handlers.
 java provides an httpserver class
 javarocks
 just like "new", this method returns a reference to the new object.
+", lastname=
+lastname.settext(person.getlastname());
+latlng sydney
+layoutinflater.from(context);
+layoutinflater layoutinflater = layoutinflater.from
+((length = responsebody.read(buffer))
+lines = new arraylist<>();
+@link
+list<event> allevents;
 list<event> data;
 list<event> events;
 list<event> events = new arraylist
+list<event> getdata()
+list<event> getevents()
+list<person> children = new arraylist<>();
 list<person> data;
+list<person> getdata()
+list<person> getpersons()
 list<person> persons = new arraylist
 list<polyline> lines
+list<user> getusers()
 list<user> users;
 loadrequest(list<user> users, list<person> persons, list<event> events)
+loadrequest loadrequest;
+loadrequest request;
 loadresponse response = null;
+loadresult load(loadrequest request)
+location\[\] data;
+location\[\] getdata()
+locations = gson.fromjson(
+logger.setlevel(loglevel);
+loginrequest loginrequest;
+loginrequest request;
+loginresult login(loginrequest request)
 log message indicating
+logout();
+long getchildid(int groupposition, int childposition)
+long getgroupid(int groupposition)
+long totalsize = 0;
 : \\"m\\"
+manipulates the map once available.
+map.addmarker(new markeroptions()
+mapfragment mapfragment;
+mapfragment = mapfragment.newinstance(eventid);
 map = googlemap;
+map.setmaptype(maptype);
 maptype =
+mapview.onresume();
+marker in sydney
+markers = new arraylist<>();
+markers = new hashmap<>();
+markers.put(marker, event);
 marks we can change them later with help from the statement
 max_waiting_connections
+menuinflater getmenuinflater()
+menuinflater inflater = getmenuinflater();
+message = null;
 messages containing information about its internal activities.
 method for the server program
+mlistener = null;
+mlistener = (onfragmentinteractionlistener) context;
+mmap.addpolyline(new polylineoptions()
+model model = model.getinstance();
+model.setauthtoken(authtoken);
+mother = null;
+mother.setspouseid(father.getpersonid());
+movecamera(cameraupdatefactory.newlatlng(marker.getposition()));
 \\n" +
+// necessary because our server only returns json responses, but it
 new authtokendao(conn);
 new dataaccessexception("error encountered while finding token");
 new dataaccessexception("sql error encountered while clearing tables");
 new eventdao(conn);
+new icondrawable(getactivity(), fontawesomeicons.fa_fe
+new icondrawable(getactivity(), fontawesomeicons.fa_male
+new icondrawable(this, fontawesomeicons.fa_fe
+new icondrawable(this, fontawesomeicons.fa_male
 new inetsocketaddress
 new intent(getactivity(), personactivity.class);
 new intent(this, mainactivity.class);
+.newlatlng(sydney)
+= new linearlayoutmanager(this);
 new persondao(conn);
 new server().run
 = new url(
+new user account, generates 4 generations
 new userdao(conn);
 // next we send the json data in the http response body.
 (non-empty string)
 @nonnull
+notifydatasetchanged();
+// not receive the list of games, so we close the response body output stream,
 // now that the status code and headers have been sent to the client,
+object getchild(int groupposition
+object getgroup(int groupposition)
 objects.equals(
+// occurred, so print out the message from the http response
+oncreateviewholder(
+.ondestroy();
+.onfragmentinteraction(uri)
+.onlowmemory();
+onmarkerclick(final marker marker)
+.onpause();
+onprogressupdate
+.onresume();
+.onstart();
+.onstop();
 // on which the server should accept incoming client connections.
+// open a database connection
 open a database connection to the file given in the path
 openconnection();
+options = new markeroptions()
+options = new polylineoptions()
+os = exchange.getresponsebody();
+output stream, indicating that the response is complete.
+outputstream outputstream = exchange.getresponsebody();
 outputstream respbody = exchange.getresponsebody();
 outputstreamwriter sw = new outputstreamwriter(os);
 @override
+<p>
 package dao
 package dataaccess;
+package database;
 package handler
 package model
+package net;
 package request
+package response;
+package result;
+package server;
+package serverproxy;
 package service
 @param
 parameter must be a user already registered with the server
 \\"parker\\"
+", password=
 \\"patrick\\"
 patrick_spencer
+persondao.addperson(person);
 person find(string
+person\[\] getdata()
 person.getfatherid());
 person.getmotherid());
+person getperson()
+person\[\] getpersons()
+", personid=
+personid = null;
 person = null;
 = (person) o
+person person;
+person person = new person();
 person person = null;
 \\"persons\\":
 persons.add(person);
@@ -297,98 +635,175 @@ populates the server's database with generated data for the specified user
 posted user, person, and event data into the database
 .preparestatement(sql);
 .printstacktrace();
+private appcompatdelegate getdelegate()
 private arraylist<person> persons;
 private authtokendao authtokendao;
+private button loginbutton;
+private button mlogin;
+private button mregister;
+private button mregisterbutton;
+private button msigninbutton;
+private button registerbutton;
+private button signinbutton;
+private char gender;
+private clearservice clearservice;
+private context context;
 private database db;
 private double latitude;
 private double longitude;
+private drawable femaleicon;
+private drawable icon;
+private drawable maleicon;
 private edittext email;
+private edittext emailfield;
 private edittext firstname;
+private edittext firstnamefield;
+private edittext hostfield;
 private edittext lastname;
+private edittext lastnamefield;
+private edittext memailfield;
+private edittext mfirstnamefield;
+private edittext mlastnamefield;
+private edittext mpasswordfield;
+private edittext mserverhostfield;
+private edittext mserverportfield;
+private edittext musernamefield;
 private edittext password;
+private edittext passwordfield;
 private edittext serverhost;
 private edittext serverport;
 private edittext username;
+private edittext usernamefield;
 private eventdao eventdao;
+private event\[\] data;
 private event\[\] events;
+private filteradapter madapter;
 private float latitude;
 private float longitude;
 private googlemap googlemap;
 private googlemap m
+private gson gson;
 private httpserver server;
+private imageview mimageview;
 private integer year
 private int generations;
+private int port;
 private int year;
 private list<location> locations;
 private list<person> persons;
+private list<string> eventtypes;
+private locations locations;
 private loginrequest loginrequest;
+private model()
+private model model;
+private onfragmentinteractionlistener
 private persondao persondao;
 private person\[\] data;
 private person person;
 private person\[\] persons;
+private radiobutton mfemalebutton;
+private radiobutton mmalebutton;
+private radiogroup gender;
+private recyclerview.layoutmanager mlayoutmanager;
+private recyclerview mrecyclerview;
+private recyclerview recyclerview;
 private registerrequest registerrequest;
+private registerservice registerservice;
+private spinner familytreelinesspinner;
+private spinner lifestorylinesspinner;
+private spinner maptypespinner;
+private spinner spouselinesspinner;
+private static final string arg_param1 =
+private static final string arg_param2 =
+private static logger logger;
 private string authtoken;
 private string city;
 private string country;
 private string descendant;
+private string descendant = null;
 private string email;
 private string eventid;
 private string eventtype;
 private string father;
 private string fatherid;
+private string father = null;
 private string firstname;
+private string firstname = null;
 private string gender;
+private string gender = null;
+private string host;
+private string id;
 private string lastname;
+private string lastname = null;
+private string maptype;
 private string message;
 private string mother;
 private string motherid;
+private string mother = null;
+private string mparam1;
+private string mparam2;
 private string password;
 private string personid;
-private string readstring(inputstream is) throws ioexception
+private string serverhost;
+private string serverport;
 private string spouse;
 private string spouseid;
+private string spouse = null;
+private string title;
 private string token;
+private string type;
 private string username;
+private string username = null;
+private string year;
+private switch familytreelinesswitch;
+private switch lifestorylinesswitch;
+private switch mswitch;
+private switch spouselinesswitch;
+private textview firstname;
+private textview gender;
+private textview lastname;
+private textview mfirstname;
+private textview mgender;
+private textview mlastname;
+private userdao udao;
 private userdao userdao;
 private user user;
 private user\[\] users;
+private view v;
+private void login()
+private void register()
 private void run(string portnumber)
 // program that can receive incoming http requests, and respond
 protected void oncreate(bundle savedinstancestate)
 // protocol (be glad you don't have to).
 \\"provo\\"
-public arraylist<event> getevents()
-public arraylist<person> getpersons()
+proxy = new serverproxy();
+proxy.register(registerrequest);
 public authtoken()
+public authtokendao()
 public authtokendao(connection conn)
 public authtoken(string token, string username)
-public boolean equals(object
-public boolean hasstableids()
-public boolean insert(person person) throws dataaccessexception
-public boolean ischildselectable(int groupposition, int childposition)
-public boolean oncreateoptionsmenu(menu menu)
-public boolean onmarkerclick(marker
-public boolean onoptionsitemselected(
 public class authtoken
 public class authtokendao
-public class clearhandler implements httphandler
+class clearhandler implements httphandler
 public class clearresponse
 public class clearresult
 public class clearservice
 public class dataaccessexception extends exception
 public class database
+class defaulthandler implements httphandler
 public class event
 public class eventdao
 public class exampleinstrumentedtest
 public class exampleunittest
-public class filehandler implements httphandler
-public class fillhandler implements httphandler
+class filehandler implements httphandler
+class fillhandler implements httphandler
 public class fillrequest
 public class fillresponse
 public class fillresult
 public class fillservice
 public class filteractivity extends appcompatactivity
-public class loadhandler implements httphandler
+class loadhandler implements httphandler
 public class loadrequest
 public class loadresponse
 public class loadresult
@@ -396,204 +811,160 @@ public class loadservice
 public class location
 public class locations
 public class loginfragment extends fragment
-public class loginhandler implements httphandler
+class loginhandler implements httphandler
 public class loginrequest
 public class loginresponse
 public class loginresult
 public class loginservice
+class logintask extends asynctask
 public class mainactivity extends appcompatactivity
-public class mapfragment extends fragment implements onmapreadycallback
+public class mapfragment extends fragment
+public class model
 public class names
 public class person
 public class persondao
-public class registerhandler implements httphandler
+class registerhandler implements httphandler
 public class registerrequest
 public class registerresponse
 public class registerresult
 public class registerservice
+class registertask extends asynctask
 public class result
 public class searchactivity extends appcompatactivity
 public class server
+public class settings
 public class settingsactivity extends appcompatactivity
 public class user
 public class userdao
+public clearhandler()
 public clearresponse(string message)
+public clearresult()
 public clearservice()
-public connection openconnection() throws dataaccessexception
-public double getlatitude()
-public double getlongitude()
+public database()
 public event()
+public eventdao()
 public eventdao(connection conn)
-public event find(string eventid) throws dataaccessexception
-public event getevent()
-public event\[\] getevents()
+public eventmodel(
+public eventresponse()
+public eventservice()
+public fillhandler()
 public fillrequest()
 public fillrequest(string username, int generations)
+public fillresponse()
 public fillresponse(string message)
+public fillresult fill(fillrequest request)
+public fillresult(string message)
 public fillservice()
-public final class buildconfig
-public float getlatitude()
-public float getlongitude()
-public integer getyear()
-public int getchildrencount(int groupposition)
-public int getgroupcount()
-public int getitemcount()
-public int getyear()
-public list<event> getdata()
-public list<event> getevents()
-public list<person> getdata()
-public list<person> getpersons()
-public list<user> getusers()
+public int getfamilytreelinescolor()
+public int getlifestorylinescolor()
+public int getspouselinescolor()
+public loadhandler()
 public loadrequest()
+public loadrequest(user
+public loadresponse()
 public loadresponse(string message)
-public location\[\] getdata()
+public loadresult(string message)
+public loadservice()
+public location(
 public loginfragment()
+public loginrequest(
 public loginrequest(string username, string password)
+public loginresponse()
 public loginresponse(string authtoken, string username, string personid)
-public long getchildid(int groupposition, int childposition)
-public long getgroupid(int groupposition)
+public loginresult(string authtoken, string username, string personid)
+public loginservice()
 public mapfragment()
-public object getchild(int groupposition
-public object getgroup(int groupposition)
+public map<string, event> getevents()
+public map<string, person> getpeople()
 public person()
+public persondao()
 public persondao(connection conn)
-public person\[\] getdata()
-public person getperson()
-public person\[\] getpersons()
+public personmodel(
+public personresponse()
+public personservice()
+public person(string
 public person(string personid, string descendant, string firstname, string lastname, string gender)
 public person(string personid, string descendant, string firstname, string lastname, string gender, string father, string mother, string spouse)
+public registerhandler()
 public registerrequest()
+public registerrequest(string
 public registerrequest(string username, string password, string email, string firstname, string lastname, string gender)
+public registerresponse()
 public registerresponse(string authtoken, string username, string personid)
-public static final boolean debug = boolean.parseboolean("true");
-public static final int textappearance
-public static final int toolbar
-public static final int version_code = 1;
-public static final int viewbackgroundhelper
-public static final string build_type = "debug";
-public static final string flavor = "";
-public static final string version_name = "1.0";
-public static mapfragment newinstance()
-public static void main(string\[\] args)
-public string getauthtoken()
-public string getcity()
-public string getcountry()
-public string\[\] getdata()
-public string getdescendant()
-public string getemail()
-public string geteventid()
-public string geteventtype()
-public string getfather()
-public string getfatherid()
-public string getfirstname()
-public string getgender()
-public string getlastname()
-public string getmaptype()
-public string getmessage()
-public string getmother()
-public string getmotherid()
-public string getpassword()
-public string getpersonid()
-public string getspouse()
-public string getspouseid()
-public string gettoken()
-public string getusername()
-public string tostring()
+public registerservice()
+public response()
+public serverproxy()
+public static model getinstance()
+public static settings getinstance()
+public static void main(string
+public string getid()
+public string getlatitude()
+public string getlongitude()
+public string getserverport()
+public string getyear()
 public user()
+public userdao()
 public userdao(connection conn)
-public user\[\] getusers()
+public usermodel(
 public user(string username, string password, string email, string firstname
-public view getchildview(int groupposition
-public view oncreateview(layoutinflater
-public void addition_iscorrect()
-public void aftertextchanged(editable s)
-public void beforetextchanged(
-public void clear()
-public void cleartables() throws dataaccessexception
-public void closeconnection(boolean commit) throws dataaccessexception
-public void createtables() throws dataaccessexception
-public void deletefail()
-public void deletepass()
-public void findfail()
-public void findpass()
-public void handle(httpexchange
-public void insertfail()
-public void insertfail() throws exception
-public void insertpass()
-public void insertpass() throws exception
-public void oncheckedchanged(compoundbutton
-public void onclick(view
-public void onclick(view v)
-public void oncreate(bundle savedinstancestate)
-public void oncreateoptionsmenu(menu menu, menuinflater inflater)
-public void ondetach()
-public void onitemselected(adapterview
-public void onmapready(googlemap googlemap)
-public void onnothingselected(adapterview<?> parent)
-public void onresume()
-public void ontextchanged(
-public void setauthtoken(string authtoken)
-public void setcity(string city)
-public void setcountry(string country)
-public void setdata(list<event> data)
-public void setdata(list<person> data)
-public void setdescendant(string descendant)
-public void setemail(string email)
-public void setevent(event event)
-public void seteventid(string eventid)
-public void setevents(arraylist<event> events)
-public void setevents(list<event> events)
-public void seteventtype(string eventtype)
-public void setfatherid(string fatherid)
-public void setfather(string father)
-public void setfirstname(string firstname)
-public void setgender(string gender)
-public void setlastname(string lastname)
-public void setlatitude(double latitude)
-public void setlatitude(float latitude)
-public void setlongitude(double longitude)
-public void setlongitude(float longitude)
-public void setmaptype(string maptype)
-public void setmessage(string message)
-public void setmotherid(string motherid)
-public void setmother(string mother)
-public void setpassword(string password)
-public void setpersonid(string personid)
-public void setperson(person person)
-public void setpersons(arraylist<person> persons)
-public void setpersons(list<person> persons)
-public void setspouseid(string spouseid)
-public void setspouse(string spouse)
-public void settoken(string token)
-public void setup() throws exception
-public void setusername(string username)
-public void setusers(list<user> users)
-public void setyear(integer year)
-public void setyear(int year)
-public void teardown() throws exception
-public void useappcontext()
+public void setfamilytreelinescolor(int familytreelinescolor)
+public void setlatitude(string latitude)
+public void setlifestorylinescolor(int lifestorylinescolor)
+public void setlongitude(string longitude)
+public void setserverport(string serverport)
+public void setspouselinescolor(int spouselinescolor)
+public void setyear(string year)
 question mark found in our sql string
 random rand = new random();
+random random = new random();
 rather than calling "new" directly, we instead create
 Read JSON string from the input stream
 readstring(respbody);
+recyclerview meventrecyclerview;
+recyclerview.setadapter(adapter);
+recyclerview.setadapter(madapter);
+recyclerview.setlayoutmanager(
 registerhandlers(httpserver server)
 registerhandlers(server);
 registerresponse response = null;
+registerresult registerresult;
 registerresult registerresult = registerservice.register(registerrequest);
+registertask.execute(registerrequest);
 .remove();
+rename and change types and number of parameters
+rename and change types of parameters
+rename method, update argument and hook method into ui event
+rename parameter arguments, choose names that match
+request = gson.fromjson(reqdata
+// request is complete
 request = new loginrequest();
 request = new registerrequest();
+required empty public constructor
 respbody.close();
+responsecode = httpurlconnection.http_not_found;
+responsecode = httpurlconnection.http_ok;
 result = loadservice.load(loadrequest);
 result = loginservice.login(loginrequest);
+result = null;
 resultset rs;
 resultset rs = null;
+resync();
+// retrieve a list of games running in the server in json format
 @return
 return;
+return 0;
+return -1;
+return 1;
+return 2;
+return 4;
 return authtoken;
 return childposition;
+return children;
 return city;
+return color;
+return color.blue;
+return color.green;
+return color.red;
 return commit;
 return conn;
 return connection;
@@ -601,37 +972,70 @@ return convertview;
 return country;
 return data;
 return descendant;
+return earliestevent;
 return email;
 return event;
 return eventid;
 return events;
+return events.size();
 return eventtype;
+return eventtypes;
 return false;
+return familytreelinescolor;
 return father;
 return fatherid;
 return filteredevents;
+return filters;
 return firstname;
+return fnames;
+return fragment;
 return gender;
 return generations;
+return getdelegate()
 return groupposition;
+return id;
+return index;
+return instance;
 return lastname;
 return latitude;
+return lifestorylinescolor;
+return locations;
+return loginresponse;
+return loginresult;
 return longitude;
 return maptype;
+return marker;
+return markers;
+return mdelegate;
 return message;
+return mnames;
 return mother;
 return motherid;
+return new filterholder(
+return new searchholder(
 return null;
 return objects.hash(
 return password;
+return people;
 return person;
+return personevents;
+return person.getpersonid();
 return personid;
 return persons;
+return port;
+return registerresult;
 return response;
 return result;
+return results;
 return sb.tostring();
+return searchresults;
+return serverhost;
+return serverport;
+return settings;
+return snames;
 return spouse;
 return spouseid;
+return spouselinescolor;
 return success;
 return super.onoptionsitemselected(item);
 return token;
@@ -648,12 +1052,7 @@ rs.close();
 rs.getdouble("latitude"),
 rs.getdouble("longitude"),
 rs.getint("year"));
-rs.getstring("city"),
-rs.getstring("descendant"),
-rs.getstring("email"),
-rs.getstring("firstname"), rs.getstring("lastname"), rs.getstring("gender"),
-rs.getstring("password"),
-rs.getstring("personid"), rs.getfloat("latitude"), rs.getfloat("longitude"),
+rs.getstring(
 rs = stmt.executequery();
 // running because the httpserver object we created is still running
 @runwith
@@ -665,6 +1064,7 @@ select \* from event
 select \* from person
 select \* from token
 select \* from user
+// sending data and the response is complete/
 server = httpserver.create(
 server.setexecutor(null);
 // server should accept incoming client connections.
@@ -682,75 +1082,153 @@ servicetest
 setcontentview(r.layout.activity_event);
 setcontentview(r.layout.activity_filter);
 setcontentview(r.layout.activity_main);
+setcontentview(r.layout.activity_maps);
 setcontentview(r.layout.activity_person);
 setcontentview(r.layout.activity_search);
 setcontentview(r.layout.activity_settings);
+setdisplayhomeasupenabled(
 .setdooutput(
 .setdouble(
 sethasoptionsmenu(false);
 sethasoptionsmenu(true);
 .setint(
 .setmaptype(googlemap.map_type_
+setoncheckedchangelistener(new compoundbutton
+setonchildclicklistener(new expandablelistview
 .setonclicklistener(new
 setonmarkerclicklistener(new
 setonmarkerclicklistener(this
+setonquerytextlistener(
 .setrequestmethod("get");
 .setrequestmethod("post");
 .setstring(
+setsupportactionbar(toolbar);
 \\"sheila\\"
 sheila_family_map
 sheila_parker
 \\"sheila@parker.com\\"
 should contain one command-line argument, which is the port number
+// since the client request was invalid, they will not receive the
 // since the server has no "user interface", it should display "log"
+// since the server is unable to complete the request, the client will
+singlefragmentactivity extends appcompatactivity
 // some kind of internal error has occurred inside the server (not the
+// specify that we are sending an http get request
+// specify that we are sending an http post request
+// specify that we would like to receive the server's response in json
 \\"spencer\\"
+spouse = null;
+sql = "delete from
 sql error encountered while creating tables
 startactivity(intent);
 // start a transaction
 start a transaction
+// start constructing our http request
 \\"started family map\\"
 starting server
 // start sending the http response to the client, starting with
+statement stmt = null;
+static final boolean debug = boolean.parseboolean("true");
+static final int textappearance
+static final int toolbar
+static final int version_code = 1;
+static final int viewbackgroundhelper
+static final string build_type = "debug";
+static final string flavor = "";
+static final string version_name = "1.0";
+static mapfragment newinstance()
+static void main(string\[\] args)
 // status code to the client.
 string authtoken;
 string authtoken = reqheaders.getfirst("authorization");
 string authtoken = uuid.tostring();
 stringbuilder sb = new stringbuilder();
+stringbuilder stringbuilder = new stringbuilder();
 string city;
 string\[\] data;
+string descendant;
 string eventid;
+string firstname;
 (string: “f” or “m”)
 string gender;
 string gender, string father, string mother, string spouse)
+string getauthtoken()
+string getcity()
+string getcountry()
+string\[\] getdata()
+string getdescendant()
+string getemail()
+string geteventid()
+string geteventtype()
+string getfather()
+string getfatherid()
+string getfirstname()
+string getgender()
+string getlastname()
+string getmaptype()
+string getmessage()
+string getmother()
+string getmotherid()
+string getpassword()
+string getpersonid()
+string getserverhost()
+string getspouse()
+string getspouseid()
+string gettoken()
+string getusername()
+string lastname;
+string maptype;
+string message;
+string name;
+string password;
 string personid;
+string personid = event.getpersonid();
 string personid = person.getpersonid();
 string personid = uuid.tostring();
+string port;
 string portnumber = args\[0\];
+string readstring(inputstream is)
+string reqdata = gson.tojson(request);
 string reqdata = readstring(reqbody);
 string respdata = gson.tojson(response);
+string responsebodydata = baos.tostring();
+string serverhost;
+string token;
+string tostring()
+string username;
+success = false;
 success = true;
 super();
+super(itemview);
 super(message);
+super.onattach
 super.oncreateoptionsmenu(menu, inflater);
 super.oncreate(savedinstancestate);
 super.ondetach();
-super.onresume();
 super(success, message);
+super(v);
 sw.flush();
 switch (color)
 switch (item.getitemid())
 sw.write(str);
 system.out.println(reqdata);
+system.out.println(respdata);
 </table>
 <table>
 // take cs 460 for a deeper understanding of what it means.
+task.execute(request);
+task = new logintask();
+task = new registertask();
 // tells the httpserver to start accepting incoming client connections.
 @test
 // that may occur.
+the fragment initialization parameters
 // the http request was invalid somehow, so we return a "bad request"
+// the http response status code indicates an error
+the http response status code indicates an error
 // the httpserver class listens for incoming http requests.  when one
 // the maximum number of waiting incoming connections to queue.
+// the object by calling the httpserver.create static factory method.
 the pathing assumes you start in the root of your project unless given a non-relative path
 // the "portnumber" parameter specifies the port number on which the
 the readstring method shows how to read a string from an inputstream.
@@ -764,23 +1242,34 @@ the structure for this connection is driver:language:path
 the writestring method shows how to write a string to an outputstream.
 // this allows a system administrator (or you) to know what is happening
 this.authtoken = authtoken;
+this callback is triggered when the map is ready to be used.
 this.city = city;
 this.conn = conn;
+this.connection = connection;
 this.country = country;
 this.data = data;
 this.descendant = descendant;
 this.email = email;
+this.errormessage = errormessage;
 this.event = event;
 this.eventid = eventid;
 this.events = events;
 this.eventtype = eventtype;
+this.eventtypes = eventtypes;
 this example demonstrates the basic structure of the family map server
+this factory method to create a new instance
 this.father = father;
+this.father = fatherid;
 this.fatherid = fatherid;
 this.firstname = firstname;
 this.gender = gender;
 this.generations = generations;
+this.host = host;
+this.id = id;
 this is how we set up the driver for our database
+// (this is not realistic, because clients will use different
+this is the json string we will send in the http request body
+this is where we can add markers or lines, add listeners or move the camera
 this.lastname = lastname;
 this.latitude = latitude;
 // this line is necessary, but its function is unimportant for our purposes.
@@ -788,15 +1277,24 @@ this.longitude = longitude;
 this.message = message;
 // this method call will return immediately, and the "main" method
 // this method initializes and runs the server.
+// this method shows how to send a get request to a server
+// this method shows how to send a post request to a server
 this.motherid = motherid;
 this.mother = mother;
+this.mother = motherid;
 this.password = password;
 this.people = people;
+this.personevents = personevents;
 this.personid = personid;
 this.person = person;
 this.persons = persons;
+this.port = port;
+this.serverhost = serverhost;
+this.serverport = serverport;
+this.settings = settings;
 this.spouseid = spouseid;
 this.spouse = spouse;
+this.spouse = spouseid;
 this.success = success;
 this.token = token;
 this.username = username;
@@ -806,18 +1304,32 @@ this will commit the changes to the database
 this.year = year;
 throw e;
 @throws dataaccessexception
+toast.show();
 to be generated, and must be a non-negative integer
+to be used with appcompat.
+// todo auto-generated method stub
 //to fill in and give it a proper value. the first argument corresponds to the first
+to handle interaction events
+token = null;
+to the activity and potentially other fragments contained in that
 // to the client.
 .touppercase().equals("get")
 .touppercase().equals("post")
 <tr><td>
 try
 type of event (birth, baptism, christening, marriage
+udao = new userdao();
 unable to close database connection
 unable to open connection to database
+update argument type and name
+uri uri = exchange.getrequesturi();
+userdao.adduser(user);
 userdao udao = new userdao(conn);
 user find(string
+user\[\] getusers()
+usermodel()
+username = null;
+user = new user(
 user = new user();
 user = null;
 = (user) o
@@ -826,24 +1338,295 @@ user (username) to which this person belongs
 user user = null;
 // using the httpserver class, you can easily make a java
 //using the statements built-in set(type) functions we can pick the question mark we want
-uuid uuid = uuid.randomuuid();
+uuid.randomuuid().tostring();
 varchar
+// verify that the auth token is the one we're looking for
+view getchildview(int groupposition
+view getgroupview(
+view = inflater.inflate(r.layout.fragment_map, container, false);
+view oncreateview(layoutinflater
+view.setonclicklistener(this);
+view view = inflater.inflate(r.layout.fragment_login, container, false);
 view v = inflater.inflate
+view v = layoutinflater.from(parent.getcontext())
+void addcontentview(view
+void addevent(event event)
+void addition_iscorrect()
+void addmarkers()
+void addperson(person person)
+void adduser(user user)
+void aftertextchanged(editable s)
+void beforetextchanged(
+void clear()
+void cleartables() throws dataaccessexception
+void closeconnection(boolean commit) throws dataaccessexception
+void createtables() throws dataaccessexception
+void deletefail()
+void deletepass()
+void findfail()
+void findpass()
+void handle(httpexchange
 void handle(httpexchange exchange) throws ioexception
+void insertfail()
+void insertfail() throws exception
+void insertpass()
+void insertpass() throws exception
+void onattach(context context)
+void onbindviewholder(filterholder
+void onbindviewholder(searchholder
+void onbindviewholder(viewholder
+void onbuttonpressed(uri uri)
+void oncheckedchanged(compoundbutton
+void oncheckedchanged(radiogroup
+void onclick(view
+void onclick(view v)
+void oncreate(bundle savedinstancestate)
+void oncreateoptionsmenu(menu menu, menuinflater inflater)
+void ondestroy()
+void ondetach()
+void onfragmentinteraction(uri uri)
+void onitemselected(adapterview
+void onlowmemory()
+void onmapready(googlemap googlemap)
+void onnothingselected(
+void onnothingselected(adapterview<?> parent)
+void onpause()
+void onpostexecute
+void onresume()
+void onstart()
+void onstop()
+void ontextchanged(
+void setauthtoken(string authtoken)
+void setcity(string city)
+void setcontentview(view
+void setcountry(string country)
+void setdata(list<event> data)
+void setdata(list<person> data)
+void setdescendant(string descendant)
+void setemail(string email)
+void setevent(event event)
+void seteventid(string eventid)
+void setevents(arraylist<event> events)
+void setevents(event\[\] events)
+void setevents(list<event> events)
+void seteventtype(string eventtype)
+void setfatherid(string fatherid)
+void setfather(string father)
+void setfirstname(string firstname)
+void setgender(char gender)
+void setgender(string gender)
+void setgenerations(int generations)
+void setlastname(string lastname)
+void setlatitude(double latitude)
+void setlatitude(float latitude)
+void setlongitude(double longitude)
+void setlongitude(float longitude)
+void setmaptype(string maptype)
+void setmessage(string message)
+void setmotherid(string motherid)
+void setmother(string mother)
+void setpassword(string password)
+void setpersonid(string personid)
+void setperson(person person)
+void setpersons(arraylist<person> persons)
+void setpersons(list<person> persons)
+void setpersons(person\[\] persons)
+void setport(string port)
+void setserverhost(string serverhost)
+void setserverport(int serverport)
+void setspouseid(string spouseid)
+void setspouse(string spouse)
+void settoken(string token)
+void setup()
+void setup() throws exception
+void setusername(string username)
+void setusers(list<user> users)
+void setusers(user\[\] users)
+void setyear(integer year)
+void setyear(int year)
 void teardown()
+void teardown() throws exception
+void useappcontext()
 void writestring(string
+// we are not sending a response body, so close the response body
+// web api operation we want to call
 //we can structure our string to be similar to a sql command, but if we insert question
+we just add a marker near sydney, australia
 westenm
+// when the httpserver receives an http request containing the
 when the server runs, all command-line arguments are passed in to server.main.
 // which is initialized in the "run" method below.
 while ((len = sr.read(buf)) > 0)
 while (rs.next())
+while(rs.next())
 while (rs.next() == true)
 // while this value is necessary, for our purposes it is unimportant.
+.width(width)
 will rollback any changes we made during this connection
 // with appropriate http responses.
+writer.flush();
 writestring(reqdata, reqbody);
 writestring(respdata, respbody);
+// write the json data to the request body
 // write the json string to the output stream.
 \\"year\\": 201
+year = event.getyear();
 year in which event occurred
+authtoken = "";
+eventlist.add(e);
+calendar cal = calendar.getinstance();
+colorres(r.color.female_icon).sizedp(40);
+colorres(r.color.male_icon).sizedp(40);
+events.add(e);
+drawable icon;
+events = new arraylist<event>();
+expandablelistadapter listadapter;
+expandablelistview explistview;
+gender.settext("female");
+gender.settext("male");
+.get(childposititon);
+header.add("family");
+header.add("life events");
+headers.add("family");
+headers.add("life events");
+if(person.getgender().equals("m"))
+lbllistheader.settext(headertitle);
+lbllistheader.settypeface(null, typeface.bold);
+listdataheader.add("family");
+listdataheader.add("life events");
+list<string> family = new arraylist<string>();
+list<string> listdataheader;
+listview.setadapter(listadapter);
+loggedin = false;
+(edittext) v.findviewbyid(r.id.
+private boolean loggedin = false;
+private button mloginbutton;
+private class filterholder extends recyclerview.viewholder
+private expandablelistadapter listadapter;
+private hashmap<string, list<string>> _listdatachild;
+private context _context;
+private linearlayout mlogout;
+private linearlayout mresync;
+private list<string> _listdataheader;
+private searchadapter madapter;
+private recyclerview mfilterrecyclerview;
+private recyclerview msearchrecyclerview;
+private string currpersonid;
+private person mcurrentperson;
+private void updateui()
+private void preparelistdata()
+string doinbackground(string
+public class expandablelistadapter extends baseexpandablelistadapter
+return e;
+return eventlist;
+return eventmap;
+return family;
+return firstname + " " + lastname;
+return ourinstance;
+return personmap;
+return this._listdatachild.get(this._listdataheader.get(groupposition))
+return this._listdatachild.get(this._listdataheader.get(groupposition)).size();
+return this._listdataheader.get(groupposition);
+return this._listdataheader.size();
+setmaptype();
+startactivity(i);
+spinner.setadapter(adapter);
+string headertitle = (string) getgroup(groupposition);
+string password = mpassword.gettext().tostring();
+string username = musername.gettext().tostring();
+textview lbllistheader = (textview) convertview
+this._context = context;
+this._listdatachild = listchilddata;
+this._listdataheader = listdataheader;
+this.loggedin = loggedin;
+this.personid = person;
+updateui();
+case r.id.filtermenuitem:
+case r.id.searchmenuitem:
+case r.id.settingsmenuitem:
+for (int i = 0; i < people.size(); i++)
+if (o == null)
+map.movecamera(cameraupdatefactory.newlatlngzoom(
+if (mlistener != null)
+getmenuinflater().inflate(r.menu.menu_main, menu);
+private compoundbutton.oncheckedchangelistener listener;
+string getdescription()
+void logout()
+return this.authtoken;
+return this.city;
+return this.descendant;
+return this.email;
+return this.eventid;
+return this.eventtype;
+return this.father;
+return this.firstname;
+return this.gender;
+return this.lastname;
+return this.latitude;
+return this.longitude;
+return this.mother;
+return this.password;
+return this.personid;
+return this.spouse;
+return this.username;
+return this.year;
+this.context = context;
+this.name = name;
+eventlist = new arraylist<>();
+edittext memailfield;
+edittext mpasswordfield;
+edittext musernamefield;
+private string mfirstname;
+private string mgender;
+private string mlastname;
+private string mserverhost;
+private string mserverport;
+private textview mfirstnametextview;
+private textview mgendertextview;
+private textview mlastnametextview;
+private filteradapter mfilteradapter;
+if (spouseid != null)
+private string mserverport
+private string mserverhost
+private string mlastname
+private string mgender
+private string mfirstname
+set<string> eventtypes = new hashset<>();
+void onactivityresult(int requestcode
+this.context = context;
+context context;
+firstname = null;
+eventid = null;
+email = null;
+descendant = null;
+city = null;
+data = null;
+eventid = null;
+eventtype = null;
+lastname = null;
+password = null;
+gender = null;
+@org.junit.test
+private set<string> eventtypes;
+set<string> geteventtypes()
+class eventholder extends
+class personholder extends
+class personadapter extends
+class eventadapter extends
+case r.id.menu_filters:
+case r.id.menu_search:
+case r.id.menu_settings:
+viewgroup parent)
+switch (eventtype)
+if (authtoken == null)
+people = new arraylist<>();
+private int maptype;
+lines.add(line);
+model = model.getinstance();
+class roothandler implements httphandler
+eventmap = new hashmap<>();
+package fms;
+void onparentcollapsed(int parentposition)
+void onparentexpanded(int parentposition)
+super(groups);
+super(view);
