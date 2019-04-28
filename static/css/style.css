@@ -25,6 +25,10 @@ td {
     font-weight: bold;
 }
 
+td:hover {
+    background-color: gainsboro;
+}
+
 table tr:nth-child(even) {
     background-color: #eee;
 }
