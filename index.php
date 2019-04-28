@@ -44,13 +44,12 @@
         }
 
         if (!$headersRead) {
+            // Transition from Head to body
             echo "</thead>";
             echo "<tbody>";
-
-            
         }
 
-        $headersRead = true;
+        $headersRead = true; // Set header flag for the rest of the iteration
         echo "</tr>\n";
     }
     fclose($f);

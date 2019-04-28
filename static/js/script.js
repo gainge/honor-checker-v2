@@ -7,7 +7,6 @@ $(document).ready(function() {
   console.log(headers);
 
   $("#results-table th").click(function() {
-    console.log("Cool?");
     $("#results-table th").css("background-color", "azure");
     $(this).css("background-color", "#00bbcc");
   });
