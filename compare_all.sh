@@ -17,37 +17,6 @@ getNetID() {
   echo $NETID
 }
 
-writeResultsHeader() {
-  local OUTPATH=$1
-  local -n REPO_DIRS=$2
-  local -n STUDENT_DIRS=$3
-
-  # Write the legend/key
-  echo -n "NetID/Comparison," >> $OUTPATH
-
-  # Write out each repository
-  local len=${#REPO_DIRS[@]}
-  for ((i = 0; i < $len; ++i)) do
-    local repo=${REPO_DIRS[$i]}
-
-    echo -n "$repo," >> $OUTPATH
-  done
-
-  # Do the same for each student, in reverse order
-  len=${#STUDENT_DIRS[@]}
-  for ((i = $len - 1; i >= 0; --i)) do
-    local NETID=$(getNetID ${STUDENT_DIRS[$i]})
-
-    echo -n "$NETID," >> $OUTPATH
-  done
-
-  # Remove last traling comma
-  truncate -s-1 $OUTPATH
-
-  # End the header row
-  echo -ne "\n" >> $OUTPATH
-}
-
 getMatches() {
   local FILE1=$1
   local FILE2=$2
@@ -78,12 +47,7 @@ compareFiles() {
   # local NUM_MATCHES=$(echo "$MATCHES" | wc -l)
   local NUM_MATCHES=$(getNumMatches $FILE1 $FILE2)
 
-  # Write the number to the output file, and the total matches to the output dir
-  # I might hold off on the dir for now though
-  # TODO: Eventually someday log the matches as well?
-  #       Or just give instructions for comparison at the end?
-  #       Yeah I like that a lot better.
-  #         I'll just bust out a script that compares two files
+  # Write the number to the output file
   echo -n "$NUM_MATCHES," >> $RESULTS
 }
 
@@ -140,7 +104,34 @@ fi
 touch $RESULTS
 
 # Write out the header for the results file
-writeResultsHeader "$RESULTS" REPOS DIRECTORIES
+# Write the legend/key
+echo -n "NetID/Comparison," >> $RESULTS
+
+# Write out each repository
+len=${#REPOS[@]}
+for ((i = 0; i < $len; ++i)) do
+  REPO=${REPOS[$i]}
+
+  echo -n "$REPO," >> $RESULTS
+done
+
+# If comparing students was enabled
+if [[ "$students" == "true" ]]; then
+  # Do the same for each student, in reverse order
+  len=${#DIRECTORIES[@]}
+  for ((i = $len - 1; i >= 0; --i)) do
+    NETID=$(getNetID ${DIRECTORIES[$i]})
+
+    echo -n "$NETID," >> $RESULTS
+  done
+fi
+
+# Remove last traling comma
+truncate -s-1 $RESULTS
+
+# End the header row
+echo -ne "\n" >> $RESULTS
+
 
 # Finally, perform the comparison of the files against eachother
 for ((i = 0; i < $TOTAL; ++i)) do
