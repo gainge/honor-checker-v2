@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Let's try this super sick solution pulled from online
+# Basically the gist is that sed isn't the same on mac os vs linux
+# So we have to test the versioning to get the right behavior
+sedi () {
+    sed --version >/dev/null 2>&1 && sed -i -- "$@" || sed -i "" "$@"
+}
+
 # This is where we remove a bunch of gunk in the java files
 NOISE_PATTERNS="noise.txt"
 LINE_NOISE="line_noise.txt"
@@ -24,18 +31,18 @@ fi
 cp $FILE $DESTINATION_FILE
 
 # Perform the necessary replacement
-sed -i 's/[{}]//g' $DESTINATION_FILE                              # Remove brackets
-sed -i 's/^[[:blank:]]*\(.*\)[[:blank:]]*$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
-sed -i 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # convert javadoc lines to strings
-sed -i 's/^\/\/[[:blank:]]*$//' $DESTINATION_FILE
-sed -i 's/^do[[:blank:]]*$//' $DESTINATION_FILE
-sed -i 's/^[[:blank:]]*static[[:blank:]]*$//' $DESTINATION_FILE
-sed -i 's/^;[[:blank:]]*$//' $DESTINATION_FILE
-sed -i 's/^);[[:blank:]]*$//' $DESTINATION_FILE
-sed -i 's/^\/\*[[:blank:]]*$//' $DESTINATION_FILE
-sed -i 's/^\*[[:blank:]]*$//' $DESTINATION_FILE
-sed -i '/^$/d' $DESTINATION_FILE                                  # Remove blank lines
-sed -i 's/\(.*\)/\L\1/g' $DESTINATION_FILE                        # Lowercase
+sedi 's/[{}]//g' $DESTINATION_FILE                              # Remove brackets
+sedi 's/^[[:blank:]]*\(.*\)[[:blank:]]*$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
+sedi 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # convert javadoc lines to strings
+sedi 's/^\/\/[[:blank:]]*$//' $DESTINATION_FILE
+sedi 's/^do[[:blank:]]*$//' $DESTINATION_FILE
+sedi 's/^[[:blank:]]*static[[:blank:]]*$//' $DESTINATION_FILE
+sedi 's/^;[[:blank:]]*$//' $DESTINATION_FILE
+sedi 's/^);[[:blank:]]*$//' $DESTINATION_FILE
+sedi 's/^\/\*[[:blank:]]*$//' $DESTINATION_FILE
+sedi 's/^\*[[:blank:]]*$//' $DESTINATION_FILE
+sedi '/^$/d' $DESTINATION_FILE                                  # Remove blank lines
+sedi 's/\(.*\)/\L\1/g' $DESTINATION_FILE                        # Lowercase
 
 # Now we do the reverse grep on the silly patterns
 TEMP="temp.txt"
