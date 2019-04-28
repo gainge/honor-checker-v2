@@ -78,7 +78,9 @@
             </div>
 
             <div id="inspect-container">
-                <button class="btn btn-primary" id="inspect-button">View Code</button>
+                <form id="inspect-form" target="_blank" method="post">
+                    <button class="btn btn-primary" id="inspect-button">View Code</button>
+                </form>
             </div>
         </div>
     </div>

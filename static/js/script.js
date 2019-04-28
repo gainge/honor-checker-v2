@@ -66,9 +66,9 @@ $(document).ready(function() {
 
   function loadMatchesModal(matches, sourceDir, compareDir) {
     // Wire up the inspection button
-    $("#inspect-button").attr("onclick", "showCode(" + 
-    "'"+ sourceDir + ALLJAVA + "', " + 
-    "'" + compareDir + ALLJAVA + "')");
+    $("#inspect-form").attr("action", "source.php?" +
+    "file1=" + sourceDir + ALLJAVA + "&" + 
+    "file2=" + compareDir + ALLJAVA + "");
 
     $("#inspect-button").show();
 
