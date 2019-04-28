@@ -27,13 +27,13 @@ if [[ "$#" -eq 3 ]]; then
   LINE_NOISE="$PARENT_DIR/$LINE_NOISE"
 fi
 
-# Make a backup of the input file
+# Make a backup of the input file to work on
 cp $FILE $DESTINATION_FILE
 
-# Perform the necessary replacement
+# Perform some of the basic/common replacements
 sedi 's/[{}]//g' $DESTINATION_FILE                              # Remove brackets
 sedi 's/^[[:blank:]]*\(.*\)[[:blank:]]*$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
-sedi 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # convert javadoc lines to strings
+sedi 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # Convert javadoc lines to strings
 sedi 's/^\/\/[[:blank:]]*$//' $DESTINATION_FILE
 sedi 's/^do[[:blank:]]*$//' $DESTINATION_FILE
 sedi 's/^[[:blank:]]*static[[:blank:]]*$//' $DESTINATION_FILE
@@ -42,10 +42,12 @@ sedi 's/^);[[:blank:]]*$//' $DESTINATION_FILE
 sedi 's/^\/\*[[:blank:]]*$//' $DESTINATION_FILE
 sedi 's/^\*[[:blank:]]*$//' $DESTINATION_FILE
 sedi '/^$/d' $DESTINATION_FILE                                  # Remove blank lines
-sedi 's/\(.*\)/\L\1/g' $DESTINATION_FILE                        # Lowercase
+
+# Convert to Lowercase
+TEMP="temp.txt"
+tr '[:upper:]' '[:lower:]' < $DESTINATION_FILE > $TEMP; mv $TEMP $DESTINATION_FILE
 
 # Now we do the reverse grep on the silly patterns
-TEMP="temp.txt"
 grep -i -v -f $NOISE_PATTERNS $DESTINATION_FILE > $TEMP; mv $TEMP $DESTINATION_FILE
 
 # Remove the lame lines as exact matches
