@@ -45,17 +45,38 @@ $(document).ready(function() {
       compareDir = PARENT_DIR + "/" + repo + "/";
     }
 
+    // Show modal with just the spinner for the time being
+    $("#match-content").html('<div class="lds-dual-ring"></div>');
+    $("#inspect-button").hide();
+    $("#matches-modal").addClass("active");
+
+    // Get the matches from the comparison script
+    $.ajax({
+      url: "compare.php",
+      type: 'get',
+      data: {
+        "sourceFile": sourceDir + CLEANED,
+        "compareFile": compareDir + CLEANED
+      },
+      success: function(matches) { loadMatchesModal(matches, sourceDir, compareDir); }
+    })
+  });
+
+
+
+  function loadMatchesModal(matches, sourceDir, compareDir) {
     // Wire up the inspection button
     $("#inspect-button").attr("onclick", "showCode(" + 
     "'"+ sourceDir + ALLJAVA + "', " + 
     "'" + compareDir + ALLJAVA + "')");
 
+    $("#inspect-button").show();
 
-    // Show modal
-    $("#matches-modal").addClass("active");
-
-    // alert("Row: " + row + " Col: " + column + " (" + netID + ", " + headers[column - 1] + ")");   
-  });
+    // Clear the spinner and load the matches
+    $("#match-content").html('<textarea name="matches" id="matches-body" spellcheck="false"></textarea>')
+    $("#matches-body").val(matches);
+    console.log(matches);
+  }
 
 });
 

@@ -74,8 +74,7 @@
                 <h3>Matches</h3>
             </div>
 
-            <div id="content">
-                <textarea name="matches" id="matches-body"></textarea>
+            <div id="match-content">
             </div>
 
             <div id="inspect-container">
