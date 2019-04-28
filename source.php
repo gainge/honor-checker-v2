@@ -15,25 +15,64 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="res/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    
-    <script src="./static/js/jquery-3.3.1.min.js"></script>
-    <script src="./static/js/file_compare.js"></script>
 
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/prism.css">
-    <link rel="stylesheet" href="static/css/spectre.min.css">
+    <!-- <link rel="stylesheet" href="static/css/spectre.min.css"> -->
+
+    <style>
+        .file-compare-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: .1rem;
+        }
+
+
+        .file-container {
+            max-width: 48vw;
+        }
+
+
+        .code-container {
+            max-height: 85vh;
+            overflow-x: scroll;
+            overflow-y: scroll;
+        }
+
+        h3 {
+            height: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <div id="file-compare-container">
+    <?php
+        // Read the passed args
+        $file1 = isset($_GET['file1']) ? $_GET['file1'] : "File Not Set!";
+        $file2 = isset($_GET['file2']) ? $_GET['file2'] : "File Not Set!";
+    ?>
 
-        <div class="file-container" id="file1">
+    <div class="file-compare-container">
 
+        <div class="file-container">
+            <div>
+                <h3 id="file1-name"><?php echo $file1 ?></h3>
+            </div>
+            <div class="code-container">
+                <pre><code id="file1" class="line-numbers language-java"><?php echo file_get_contents($file1); ?></code></pre>
+            </div>
         </div>
-        <div class="file-container" id="file2">
-
+        
+        <div class="file-container">
+            <div>
+                <h3 id="file1-name"><?php echo $file2 ?></h3>
+            </div>
+            <div class="code-container">
+                <pre><code id="file2" class="line-numbers language-java"><?php echo file_get_contents($file2); ?></code></pre>
+            </div>
         </div>
-
     </div>
-    
+
+    <script src="./static/js/prism.js"></script>
+
 </body>
 </html>

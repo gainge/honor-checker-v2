@@ -102,10 +102,3 @@ table tr:nth-child(odd) {
         transform: rotate(360deg);
     }
 }
-
-
-
-#file-compare-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
