@@ -21,6 +21,7 @@
     <script src="./static/js/script.js"></script>
 
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/spectre.min.css">
 
 </head>
 <body>
@@ -65,6 +66,23 @@
     fclose($f);
     echo "\n</tbody></table>";
     ?>
+
+    <div class="modal" id="matches-modal">
+        <a class="modal-overlay" aria-label="Close"></a>
+        <div class="modal-container" id="matches-container">
+            <div id="header-container">
+                <h3>Matches</h3>
+            </div>
+
+            <div id="content">
+                <textarea name="matches" id="matches-body"></textarea>
+            </div>
+
+            <div id="inspect-container">
+                <button class="btn btn-primary" id="inspect-button">View Code</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Save the headers to a js variable -->
     <script>
