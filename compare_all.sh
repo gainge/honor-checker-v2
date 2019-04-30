@@ -51,9 +51,18 @@ compareFiles() {
   echo -n "$NUM_MATCHES," >> $RESULTS
 }
 
+showHelp() {
+  echo "options:
+  [-s, --students]      Compare students to other students
+
+  [-h, --help]          Show help
+  "
+}
+
 
 # Check for optional student flag
 students=false
+hlp=false
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
   key="$1"
@@ -63,12 +72,22 @@ while [[ $# -gt 0 ]]; do
       students=true
       shift # past flag I guess
       ;;
+      -h|--help)
+      hlp=true
+      shift
+      ;;
       *)    # unknown option
       POSITIONAL+=("$1") # save it in an array for later
       shift # past argument
       ;;
   esac
 done
+
+# Check help statement
+if [[ "$hlp" == true ]]; then
+  showHelp
+  exit 1
+fi
 
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
@@ -107,7 +126,7 @@ touch $RESULTS
 # Write the legend/key
 echo -n "NetID/Comparison," >> $RESULTS
 
-# Write out each repository
+# Write out each repository to the header
 len=${#REPOS[@]}
 for ((i = 0; i < $len; ++i)) do
   REPO=${REPOS[$i]}
