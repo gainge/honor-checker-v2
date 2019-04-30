@@ -1,17 +1,27 @@
 #!/bin/bash
 
-# STUDENT_CODE_DIR="student-code-directories"
 # SEMESTER="winter2019"
 # TODO: integrate semester tracking when making directories
 
+usage() {
+  echo "usage: $0 <ZIP FILE> <TARGET DIRECTORY>"
+}
+
 if [[ "$#" -ne 2 ]]
 then
-	echo "usage: $0 <ZIP FILE> <TARGET DIRECTORY>"
+	usage
 	exit 1
 fi
 
 FILENAME="$1"
 STUDENT_CODE_DIR="$2"
+
+# Check those args!
+if [[ ! -f $FILENAME ]]; then
+  echo "Could not locate zip file: [$FILENAME], exiting"
+  usage
+  exit 1
+fi
 
 # extract the netID from the file
 NETID=${FILENAME%.*}
