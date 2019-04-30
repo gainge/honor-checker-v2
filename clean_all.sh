@@ -1,18 +1,31 @@
 #!/bin/bash
 
-if [[ "$#" -ne 1 ]]; then
-  echo "usage: $0 <PARENT DIRECTORY>"
+
+usage() {
+  echo "usage: $0 <PARENT DIRECTORY> [NOISE DIRECTORY]"
+}
+
+
+if [[ "$#" -eq 0 ]]; then
+  usage
 	exit 1
 fi
 
 PARENT_DIR=$1
+NOISE_DIR="./"    # init as current directory as default
 # Clean the input
-# PARENT_DIR=$(echo $PARENT_DIR | cut -d/ -f1) # Why did I want to do this?
 PARENT_DIR=${PARENT_DIR%%/}
 
 if [[ ! -d $PARENT_DIR ]]; then
   echo "Directory: $PARENT_DIR does not exist.  Exiting..."
+  usage
   exit 1
+fi
+
+# Attempt to retrieve the noise directory
+shift # Shift ops down
+if [[ "$#" -ge 1 ]]; then
+	NOISE_DIR="$1"
 fi
 
 # Loop over all subdirectories and clean the java file
@@ -30,7 +43,7 @@ for ((i = 0; i < $len; ++i)) do
     # Otherwise, clean things regularly
     echo "Cleaning Source File: $ALLJAVA"
     CLEANED="$CURRENT_DIR/cleaned.txt"
-    ./clean_java.sh "$ALLJAVA" "$CLEANED" "$PARENT_DIR"
+    ./clean_java.sh "$ALLJAVA" "$CLEANED" "$NOISE_DIR"
   fi
 
 done

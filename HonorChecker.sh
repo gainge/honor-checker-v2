@@ -179,11 +179,11 @@ fi
 # 3) Clean the java files in preparation for comparison
 if [[ "$clean" == true ]] || [[ "$opts" == 1 ]]; then
   printHeader "Cleaning Code"
-  ./clean_all.sh "$REPO_CODE"
-  ./clean_all.sh "$STUDENT_CODE"
+  ./clean_all.sh "$REPO_CODE" "$WORKING_DIRECTORY"
+  ./clean_all.sh "$STUDENT_CODE" "$WORKING_DIRECTORY"
 fi
 
-# 4) Compare the files!  Wahoo!
+# 4) Compare the files!
 if [[ "$compare" == true ]] || [[ "$opts" == 1 ]]; then
   printHeader "Comparing Codebases"
   if [[ "$students" == true ]]; then

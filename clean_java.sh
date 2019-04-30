@@ -21,7 +21,6 @@ DESTINATION_FILE="$2"
 
 if [[ "$#" -eq 3 ]]; then
   PARENT_DIR="$3"
-  PARENT_DIR=${PARENT_DIR%/[^/]*}
   PARENT_DIR=${PARENT_DIR%%/}
   NOISE_PATTERNS="$PARENT_DIR/$NOISE_PATTERNS" # Kind of ghetto navigate back but w/e
   LINE_NOISE="$PARENT_DIR/$LINE_NOISE"
