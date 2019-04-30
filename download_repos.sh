@@ -10,6 +10,12 @@ fi
 
 URLS="$1"
 
+# Check Url file existence
+if [[ ! -f $URLS ]]; then
+  echo "Could not locate urls file: [$URLS], exiting"
+  exit 1
+fi
+
 # Attempt to extract a different target directory
 shift # Shift ops down
 if [[ "$#" -ge 1 ]]; then
