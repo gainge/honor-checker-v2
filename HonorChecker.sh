@@ -150,7 +150,7 @@ if [[ ! -f $URLS ]] && ( [[ "$download" == true ]] || [[ "$opts" == 1 ]] ); then
 fi
 
 if [[ ! -f $NOISE ]] && ( [[ "$clean" == true ]] || [[ "$opts" == 1 ]] ); then
-  echo "Noise file [$NOISE] not found, creating empty file"
+  echo "Noise file [$NOISE] not found, creating template file"
   touch $NOISE
   # Put in a temporary line so the cleaning script doesn't erase everything
   echo "(Fill with noise patterns)" >> $NOISE
@@ -191,8 +191,9 @@ if [[ "$compare" == true ]] || [[ "$opts" == 1 ]]; then
   else
     ./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR"
   fi
-  
 fi
+
+echo "Finished"
 
 
 

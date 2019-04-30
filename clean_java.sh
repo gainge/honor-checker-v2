@@ -78,5 +78,5 @@ if [[ -f $LINE_NOISE ]]; then
   grep -x -v -F -f $LINE_NOISE $DESTINATION_FILE > $TEMP; mv $TEMP $DESTINATION_FILE
 fi
 
-# Finally sort things to make our lives easier
+# Finally sort + uniq things to make our lives easier
 sort $DESTINATION_FILE | sed "s/[[:blank:]]*$//" | uniq > $TEMP;  mv $TEMP $DESTINATION_FILE
