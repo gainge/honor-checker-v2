@@ -57,6 +57,17 @@ fi
 FILE=$1
 PATTERNS=$2
 
+# Add some argument checking, for once
+if [[ ! -f $FILE ]]; then
+  echo "Could not locate source file: [$FILE], exiting"
+  exit 1
+fi
+
+if [[ ! -f $PATTERNS ]]; then
+  echo "Could not locate patterns file: [$PATTERNS], exiting"
+  exit 1
+fi
+
 if [[ "$c" == false ]] || [[ "$v" == true ]]; then
   grep -i -F -o -f $PATTERNS $FILE | sort | uniq -c | sed 's/^ *[0-9][0-9]*[[:blank:]]//'
 fi
