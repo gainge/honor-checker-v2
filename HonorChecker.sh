@@ -20,6 +20,19 @@ printHeader() {
 }
 
 
+showHelp() {
+  echo "options:
+  [-e, -x, --extract]   Extract student code from batch directory
+  [-d, --download]      Download github repos in url file
+  [-c, --clean]         Clean all code, student and repo
+  [-m, -p, --compare]   Compare codebases (student to repo by default)
+  [-s, --students]      Also compare students to other students
+
+  [-h, --help]          Show help
+  "
+}
+
+
 # TODO: Eventually Add semester Support...  All you'd be doing is changing how you route student code
 
 ALLJAVA="alljava.txt"
@@ -40,6 +53,8 @@ clean=false
 extract=false
 download=false
 compare=false
+students=false
+hlp=false
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
   key="$1"
@@ -61,12 +76,27 @@ while [[ $# -gt 0 ]]; do
       compare=true
       shift
       ;;
+      -s|--students)
+      students=true
+      shift
+      ;;
+      -h|--help)
+      hlp=true
+      shift
+      ;;
       *)    # unknown option
-      POSITIONAL+=("$1") # save it in an array for later
+      POSITIONAL+=("$1") # save the non-config arg in an array for later
       shift # past argument
       ;;
   esac
 done
+
+# Check help
+if [[ "$hlp" == true ]]; then
+  showHelp
+  exit 1
+fi
+
 
 # Determine if any options were given
 [[ "$clean" == true ]] || [[ "$extract" == true ]] || [[ "$download" == true ]] || [[ "$compare" == true ]]; opts=$?
@@ -76,13 +106,15 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 
 if [[ "$#" -ne 1 ]]; then
   echo "usage: $0 [options] <WORKING DIRECTORY>"
+  showHelp
+  exit 1
 fi
 
 WORKING_DIRECTORY="$1"
 WORKING_DIRECTORY=${WORKING_DIRECTORY%%/} # Strip trailing slashes
 
 if [[ ! -d $WORKING_DIRECTORY ]]; then
-  echo "Invalid directory supplied [$WORKING_DIRECTORY], exiting"
+  echo "Invalid working directory supplied [$WORKING_DIRECTORY], exiting"
   exit 1
 fi
 
@@ -154,7 +186,12 @@ fi
 # 4) Compare the files!  Wahoo!
 if [[ "$compare" == true ]] || [[ "$opts" == 1 ]]; then
   printHeader "Comparing Codebases"
-  ./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR"
+  if [[ "$students" == true ]]; then
+    ./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR" -s
+  else
+    ./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR"
+  fi
+  
 fi
 
 
