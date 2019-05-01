@@ -82,7 +82,7 @@
         fclose($f);
         echo "</tbody></table>";
     } else {
-        echo "<h3>Unable to read results file: " . $resultsFile . "</h3>";
+        echo "<h3>>>Unable to read results from Directory [" . $project . "]</h3>";
     }
     ?>
 
