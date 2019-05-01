@@ -73,17 +73,22 @@ table tr:nth-child(odd) {
 
 }
 
+#matches-container {
+    max-height: 100%;
+}
+
 #matches-modal h3 {
     text-align: center;
     margin-bottom: 0;
 }
 
-#matches-model #header-container {
+#matches-modal #header-container {
  margin: 0;
 }
 
 #matches-modal textarea {
     width: 100%;
+    resize: vertical;
     height: 15rem;
     font-size: 0.9em;
 }
