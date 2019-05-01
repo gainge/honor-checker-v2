@@ -17,8 +17,8 @@ $(document).ready(function() {
 
   // Wire up some dope functionality
   $("#results-table th").click(function() {
-    $("#results-table th").css("background-color", "azure");
-    $(this).css("background-color", "#00bbcc");
+    $("#results-table th").removeClass("selected");
+    $(this).addClass("selected");
   });
 
   $("#results-table td").click(function() {   

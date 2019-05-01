@@ -21,6 +21,18 @@ th {
     background-color: azure;
 }
 
+th:hover {
+    background-color: rgb(195, 248, 248);
+}
+
+.selected {
+    background-color: #00bbcc;
+}
+
+.selected:hover {
+    background-color: #00bbcc;
+}
+
 td {
     font-weight: bold;
 }
