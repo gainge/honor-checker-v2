@@ -26,45 +26,55 @@
 </head>
 <body>
     <?php
-    echo "<table id='results-table'>\n\n";
-    $f = fopen("./Client/results/results.csv", "r");
-    $headersRead = false;
+
+    // Aight, so let's try to read from the headers or something
+    $project = isset($_GET['project']) ? $_GET['project'] : null;
+    $resultsFile = $project . "/results/results.csv";
     $headers = array();
 
-    while (($line = fgetcsv($f)) !== false) {
-        if (!$headersRead) {
-            echo "<thead>";
-        }
+    if (is_file($resultsFile)) {
+        // Display the results
+        echo "<table id='results-table'>\n\n";
+        $f = fopen($resultsFile, "r");
+        $headersRead = false;
 
-        echo "<tr>";
-
-        foreach ($line as $col=>$cell) {
-            $description = htmlspecialchars($cell);
-            
+        while (($line = fgetcsv($f)) !== false) {
             if (!$headersRead) {
-                // Strip leading directory
-                if (strpos($description, "/") > 0 && $col != 0) {
-                    $description = substr($description, strpos($description, "/") + 1);
-                }
-                array_push($headers, $description);
-
-                echo "<th>" . $description . "</th>";
-            } else {
-                echo "<td>" . $description . "</td>";
+                echo "<thead>";
             }
-        }
 
-        if (!$headersRead) {
-            // Transition from Head to body
-            echo "</thead>";
-            echo "<tbody>";
-        }
+            echo "<tr>";
 
-        $headersRead = true; // Set header flag for the rest of the iteration
-        echo "</tr>\n";
+            foreach ($line as $col=>$cell) {
+                $description = htmlspecialchars($cell);
+                
+                if (!$headersRead) {
+                    // Strip leading directory
+                    if (strpos($description, "/") > 0 && $col != 0) {
+                        $description = substr($description, strpos($description, "/") + 1);
+                    }
+                    array_push($headers, $description);
+
+                    echo "<th>" . $description . "</th>";
+                } else {
+                    echo "<td>" . $description . "</td>";
+                }
+            }
+
+            if (!$headersRead) {
+                // Transition from Head to body
+                echo "</thead>";
+                echo "<tbody>";
+            }
+
+            $headersRead = true; // Set header flag for the rest of the iteration
+            echo "</tr>\n";
+        }
+        fclose($f);
+        echo "\n</tbody></table>";
+    } else {
+        echo "<h3>Unable to read results file: " . $resultsFile . "</h3>";
     }
-    fclose($f);
-    echo "\n</tbody></table>";
     ?>
 
     <div class="modal" id="matches-modal">

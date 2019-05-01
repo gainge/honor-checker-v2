@@ -22,19 +22,24 @@
     <h2><u>Projects</u></h2>
 
     <?php
+    function writeProjectEntry($project) {
+        $entry = "<a href='results.php?project=" . $project . "'>" . $project . "</a>";
+        return $entry;
+    }
+
     $currentDir = ".";
     $ignored =  array("res", "static", "Testing");
 
     if ($handle = opendir($currentDir)) {
-
+        echo "<ul>";
         while (($entry = readdir($handle)) !== false) {
             if (is_dir($entry) && 
                 strpos($entry, ".") !== 0 &&
                 !in_array($entry, $ignored)) {
-                echo $entry;
-                echo "<br>";
+                    echo "<li>" . writeProjectEntry($entry) . "</li>";
             }
         }
+        echo "</ul>";
     }
 
     ?>
