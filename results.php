@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/spectre.min.css">
 
+    <style>
+    body {
+        padding: 0.5rem 1rem;
+    }
+    </style>
+
 </head>
 <body>
     <?php
@@ -33,6 +39,9 @@
     $headers = array();
 
     if (is_file($resultsFile)) {
+        echo "<h1><u>Honor Checker Results</u></h1>";
+        echo "<p style='margin-top: -1.1rem;'>(Select repositories to sort for top matches)</p>";
+
         // Display the results
         echo "<table id='results-table'>\n\n";
         $f = fopen($resultsFile, "r");
@@ -55,7 +64,7 @@
                     }
                     array_push($headers, $description);
 
-                    echo "<th>" . $description . "</th>";
+                    echo "<th title='sort'>" . $description . "</th>";
                 } else {
                     echo "<td>" . $description . "</td>";
                 }
@@ -68,10 +77,10 @@
             }
 
             $headersRead = true; // Set header flag for the rest of the iteration
-            echo "</tr>\n";
+            echo "</tr>";
         }
         fclose($f);
-        echo "\n</tbody></table>";
+        echo "</tbody></table>";
     } else {
         echo "<h3>Unable to read results file: " . $resultsFile . "</h3>";
     }
