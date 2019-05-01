@@ -17,9 +17,37 @@
     <meta name="theme-color" content="#ffffff">
 
 
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #f7f7f7;
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+
+        #page-title {
+            text-align: center;
+        }
+
+        h2 {
+            color: #242424;
+        }
+
+        a {
+            font-size: 2em;
+        }
+
+    </style>
+
+
 </head>
 <body>
-    <h2><u>Projects</u></h2>
+
+    <h1 id="page-title">Honor Checker</h1>
+
+    <hr>
+
+    <h1>Projects:</h1>
 
     <?php
     function writeProjectEntry($project) {
