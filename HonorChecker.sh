@@ -58,6 +58,7 @@ compare=false
 students=false
 hlp=false
 results=false
+
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
   key="$1"
@@ -135,7 +136,7 @@ NOISE="$WORKING_DIRECTORY/$NOISE"
 LINE_NOISE="$WORKING_DIRECTORY/$LINE_NOISE"
 URLS="$WORKING_DIRECTORY/$URLS"
 
-# Verify Directories are all set
+# -- Verify Directories are all set -- #
 if [[ ! -d $BATCH_DIR ]] && ( [[ "$extract" == true ]] || [[ "$opts" == 1 ]] ); then
   echo "Batch directory [$BATCH_DIR] not found, did you extract the zip file?"
   exit 1
@@ -151,7 +152,7 @@ if [[ ! -d $STUDENT_CODE ]]; then
   mkdir $STUDENT_CODE
 fi
 
-# Make sure all the necessary files are set
+# -- Make sure all the necessary files are set -- #
 if [[ ! -f $URLS ]] && ( [[ "$download" == true ]] || [[ "$opts" == 1 ]] ); then
   echo "Repo URL file [$URLS] not found, creating empty file"
   touch $URLS
@@ -167,11 +168,9 @@ fi
 if [[ ! -f $LINE_NOISE ]] && ( [[ "$clean" == true ]] || [[ "$opts" == 1 ]] ); then
   echo "Noise file [$LINE_NOISE] not found, creating template file"
   touch $LINE_NOISE
-  # Put in a temporary line so the cleaning script doesn't erase everything
+  # Again we need a temp line so things don't get nuked
   echo "(Fill with exact match line noise)" >> $LINE_NOISE
 fi
-
-
 
 
 # Ok, now we can actually start doing useful work
@@ -210,7 +209,7 @@ fi
 
 echo -e "\nFinished!"
 
-
+# 5) If configured, display the results via local server
 if [[ "$results" == true ]]; then
   printHeader "Starting Local Server"
   ./start_server.sh 8000
