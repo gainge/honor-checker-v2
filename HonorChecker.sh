@@ -39,6 +39,7 @@ showHelp() {
 ALLJAVA="alljava.txt"
 CLEANED_JAVA="cleaned.txt"
 NOISE="noise.txt"
+LINE_NOISE="line_noise.txt"
 URLS="urls.txt"
 
 STUDENT_CODE="student-code-directories"
@@ -131,6 +132,7 @@ REPO_CODE="$WORKING_DIRECTORY/$REPO_CODE"
 RESULTS_DIR="$WORKING_DIRECTORY/$RESULTS_DIR"
 BATCH_DIR="$WORKING_DIRECTORY/$BATCH_DIR"
 NOISE="$WORKING_DIRECTORY/$NOISE"
+LINE_NOISE="$WORKING_DIRECTORY/$LINE_NOISE"
 URLS="$WORKING_DIRECTORY/$URLS"
 
 # Verify Directories are all set
@@ -160,6 +162,13 @@ if [[ ! -f $NOISE ]] && ( [[ "$clean" == true ]] || [[ "$opts" == 1 ]] ); then
   touch $NOISE
   # Put in a temporary line so the cleaning script doesn't erase everything
   echo "(Fill with noise patterns)" >> $NOISE
+fi
+
+if [[ ! -f $LINE_NOISE ]] && ( [[ "$clean" == true ]] || [[ "$opts" == 1 ]] ); then
+  echo "Noise file [$LINE_NOISE] not found, creating template file"
+  touch $LINE_NOISE
+  # Put in a temporary line so the cleaning script doesn't erase everything
+  echo "(Fill with exact match line noise)" >> $LINE_NOISE
 fi
 
 

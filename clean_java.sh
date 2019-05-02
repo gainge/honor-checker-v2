@@ -45,7 +45,7 @@ if [[ ! -f $NOISE_PATTERNS ]]; then
 fi
 
 if [[ ! -f $LINE_NOISE ]]; then
-  echo ">>Warning: Could not locate line noise file: [$LINE_NOISE]
+  echo ">>Warning: Could not locate exact line match noise file: [$LINE_NOISE]
   This file greatly improves the utility of cleaned files"
 fi
 
