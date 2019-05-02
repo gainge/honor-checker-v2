@@ -27,6 +27,7 @@ showHelp() {
   [-c, --clean]         Clean all code, student and repo
   [-m, -p, --compare]   Compare codebases (student to repo by default)
   [-s, --students]      Also compare students to other students
+  [-i, --results]       Start local server to show results
 
   [-h, --help]          Show help
   "
@@ -55,6 +56,7 @@ download=false
 compare=false
 students=false
 hlp=false
+results=false
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
   key="$1"
@@ -82,6 +84,10 @@ while [[ $# -gt 0 ]]; do
       ;;
       -h|--help)
       hlp=true
+      shift
+      ;;
+      -i|--results)
+      results=true
       shift
       ;;
       *)    # unknown option
@@ -193,17 +199,12 @@ if [[ "$compare" == true ]] || [[ "$opts" == 1 ]]; then
   fi
 fi
 
-echo "Finished"
+echo -e "\nFinished!"
 
 
+if [[ "$results" == true ]]; then
+  printHeader "Starting Local Server"
+  ./start_server.sh 8000
+fi
 
-
-
-
-
-
-
-
-
-
-# Then we done!
+# Then we're done!
