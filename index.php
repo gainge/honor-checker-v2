@@ -16,28 +16,8 @@
     <meta name="msapplication-config" content="res/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-
-    <style>
-        body {
-            font-family: monospace;
-            background-color: #f7f7f7;
-            margin-left: 4rem;
-            margin-right: 4rem;
-        }
-
-        #page-title {
-            text-align: center;
-        }
-
-        h2 {
-            color: #242424;
-        }
-
-        a {
-            font-size: 2em;
-        }
-
-    </style>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/spectre.min.css">
 
 
 </head>

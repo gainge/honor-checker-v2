@@ -23,12 +23,6 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/spectre.min.css">
 
-    <style>
-    body {
-        padding: 0.5rem 1rem;
-    }
-    </style>
-
 </head>
 <body>
     <?php

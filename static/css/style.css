@@ -1,9 +1,22 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: ghostwhite;
+    background-color: #f7f7f7;
+    padding: 0.5rem 1rem;
+    color: #242424;
 }
 
+/* Homepage */
+#page-title {
+    text-align: center;
+}
+
+a {
+    font-size: 2em;
+}
+
+
+/* Results Overview */
 th {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

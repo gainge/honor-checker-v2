@@ -18,7 +18,6 @@
 
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/prism.css">
-    <!-- <link rel="stylesheet" href="static/css/spectre.min.css"> -->
 
     <style>
         .file-compare-container {
@@ -37,10 +36,16 @@
             max-height: 85vh;
             overflow-x: scroll;
             overflow-y: scroll;
+            border: 1px solid #343434;
+        }
+
+        pre[class*="language-"] {
+            margin: 0 !important;
         }
 
         h3 {
             height: 2rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -55,7 +60,7 @@
 
         <div class="file-container">
             <div>
-                <h3 id="file1-name"><?php echo $file1 ?></h3>
+                <h3 id="file1-name"><u><?php echo $file1 ?></u></h3>
             </div>
             <div class="code-container">
                 <pre><code id="file1" class="line-numbers language-java"><?php echo file_get_contents($file1); ?></code></pre>
@@ -64,7 +69,7 @@
         
         <div class="file-container">
             <div>
-                <h3 id="file1-name"><?php echo $file2 ?></h3>
+                <h3 id="file1-name"><u><?php echo $file2 ?></u></h3>
             </div>
             <div class="code-container">
                 <pre><code id="file2" class="line-numbers language-java"><?php echo file_get_contents($file2); ?></code></pre>
