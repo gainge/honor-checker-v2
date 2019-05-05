@@ -51,6 +51,10 @@ compareFiles() {
   echo -n "$NUM_MATCHES," >> $RESULTS
 }
 
+usage() {
+  echo "USAGE: $0 [options] <FILE> <PATTERNS>"
+}
+
 showHelp() {
   echo "options:
   [-s, --students]      Compare students to other students
@@ -91,15 +95,29 @@ fi
 
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
-STUDENT_CODE_DIR="student-code-directories"
-REPO_DIR="repos"
+if [[ "$#" -lt 2 ]]; then
+  usage
+  exit 1
+fi
+
+STUDENT_CODE_DIR="$1"
+REPO_DIR="$2"
 RESULT_DIR="./results"
 
 # Attempt to overwrite defaults
 if [[ "$#" -eq 3 ]]; then
-  STUDENT_CODE_DIR="$1"
-  REPO_DIR="$2"
   RESULT_DIR="$3"
+fi
+
+# Check the args to make sure they're valid
+if [[ ! -d $STUDENT_CODE_DIR ]]; then
+  echo "Could not locate directory: [$STUDENT_CODE_DIR], exiting"
+  exit 1
+fi
+
+if [[ ! -d $REPO_DIR ]]; then
+  echo "Could not locate directory: [$REPO_DIR], exiting"
+  exit 1
 fi
 
 # Find all entries in each directory, repos and students
