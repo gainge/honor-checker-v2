@@ -52,7 +52,7 @@ compareFiles() {
 }
 
 usage() {
-  echo "USAGE: $0 [options] <FILE> <PATTERNS>"
+  echo "USAGE: $0 [options] <BASE CODE DIR> <PATTERN CODE DIR>"
 }
 
 showHelp() {
