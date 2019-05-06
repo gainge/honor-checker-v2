@@ -143,7 +143,7 @@ if [[ "$random" == true ]]; then
   oob2=$(expr "$num" ">" "${#REPOS[@]}")
   oob3=$(expr "$num" "<" 1)
   if [[ ! "$num" =~ ^[0-9][0-9]*$ ]] || [[ oob1 -eq 1 ]] || [[ oob2 -eq 1 ]] || [[ oob3 -eq 1 ]]; then
-    echo "Invalid Sequence Length [$num] given, exiting..."
+    echo "Invalid Sequence Length [$num], exiting..."
     usage
     exit 1
   fi
