@@ -29,6 +29,8 @@ showHelp() {
   [-s, --students]      Also compare students to other students
   [-i, --results]       Start local server to show results
 
+  [--remove]            Clear out existing extracted/cleaned code
+
   [-h, --help]          Show help
   "
 }
@@ -58,6 +60,7 @@ compare=false
 students=false
 hlp=false
 results=false
+remove=false
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
@@ -92,6 +95,10 @@ while [[ $# -gt 0 ]]; do
       results=true
       shift
       ;;
+      --remove)
+      remove=true
+      shift
+      ;;
       *)    # unknown option
       POSITIONAL+=("$1") # save the non-config arg in an array for later
       shift # past argument
@@ -121,7 +128,8 @@ fi
 WORKING_DIRECTORY="$1"
 WORKING_DIRECTORY=${WORKING_DIRECTORY%%/} # Strip trailing slashes
 
-if [[ ! -d $WORKING_DIRECTORY ]]; then
+# Prevent back navigation + invalid params
+if [[ ! -d $WORKING_DIRECTORY ]] || [[ "$WORKING_DIRECTORY" == *"../"* ]]; then
   echo "Invalid working directory supplied [$WORKING_DIRECTORY], exiting"
   exit 1
 fi
@@ -140,6 +148,28 @@ URLS="$WORKING_DIRECTORY/$URLS"
 if [[ ! -d $BATCH_DIR ]] && ( [[ "$extract" == true ]] || [[ "$opts" == 1 ]] ); then
   echo "Batch directory [$BATCH_DIR] not found, did you extract the zip file?"
   exit 1
+fi
+
+# Check for remove, ask for confirmation
+if [[ "$remove" == true ]]; then
+  read -p "[--remove] specified.  Are you sure you want to remove extracted code? (y/N): "
+  echo    
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+      echo "exiting..."
+      exit 1
+  fi
+
+  # Otherwise we can just remove this stuff 
+  if [[ -d $REPO_CODE ]]; then
+    echo "Removing Repo Directory..."
+    rm -rf $REPO_CODE
+  fi
+
+  if [[ -d $STUDENT_CODE ]]; then
+  echo "Removing Student Code Directory..."
+    rm -rf $STUDENT_CODE
+  fi
 fi
 
 if [[ ! -d $REPO_CODE ]]; then
