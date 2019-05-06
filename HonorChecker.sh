@@ -26,6 +26,7 @@ showHelp() {
   [-d, --download]      Download github repos in url file
   [-c, --clean]         Clean all code, student and repo
   [-m, -p, --compare]   Compare codebases (student to repo by default)
+  [-r n, --random n]    Use random subset of size n
   [-s, --students]      Also compare students to other students
   [-i, --results]       Start local server to show results
 
@@ -61,6 +62,8 @@ students=false
 hlp=false
 results=false
 remove=false
+random=false
+num="n/a"
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
@@ -82,6 +85,12 @@ while [[ $# -gt 0 ]]; do
       -m|-p|--compare)
       compare=true
       shift
+      ;;
+      -r|--random)
+      random=true
+      num="$2"
+      shift # past the flag
+      shift # past the arg
       ;;
       -s|--students)
       students=true
@@ -230,11 +239,21 @@ fi
 # 4) Compare the files!
 if [[ "$compare" == true ]] || [[ "$opts" == 1 ]]; then
   printHeader "Comparing Codebases"
+  # initialize the arguments
+  args=("$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR")
+
+  # Pass in student flag if applicable
   if [[ "$students" == true ]]; then
-    ./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR" -s
-  else
-    ./compare_all.sh "$STUDENT_CODE" "$REPO_CODE" "$RESULTS_DIR"
+    args+=("--students")
   fi
+
+  # Add on the random flag and our subset size
+  if [[ "$random" == true ]]; then
+    args+=("--random")
+    args+=("$num")
+  fi
+
+  ./compare_all.sh ${args[@]}
 fi
 
 echo -e "\nFinished!"
