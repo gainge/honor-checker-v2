@@ -58,6 +58,7 @@ usage() {
 showHelp() {
   echo "options:
   [-s, --students]      Compare students to other students
+  [-r n, --random n]    Use random subset of size n from both base and pattern dirs
 
   [-h, --help]          Show help
   "
@@ -67,6 +68,8 @@ showHelp() {
 # Check for optional student flag
 students=false
 hlp=false
+random=false
+num="n/a"
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
   key="$1"
@@ -79,6 +82,12 @@ while [[ $# -gt 0 ]]; do
       -h|--help)
       hlp=true
       shift
+      ;;
+      -r|--random)
+      random=true
+      num="$2"
+      shift # past the flag
+      shift # past the arg
       ;;
       *)    # unknown option
       POSITIONAL+=("$1") # save it in an array for later
@@ -123,7 +132,27 @@ fi
 # Find all entries in each directory, repos and students
 REPOS=( $(find $REPO_DIR -maxdepth 1 \( ! -wholename $REPO_DIR \) -type d) )
 DIRECTORIES=( $(find $STUDENT_CODE_DIR -maxdepth 1 \( ! -wholename $STUDENT_CODE_DIR \) -type d) )
-TOTAL=${#DIRECTORIES[@]}
+
+REPO_INDICES=($(seq 0 1 $(expr "${#REPOS[@]}" - 1)))
+STUDENT_INDICES=($(seq 0 1 $(expr "${#DIRECTORIES[@]}" - 1)))
+
+# If they've configured a random sampling, initialize the indices accordingly
+if [[ "$random" == true ]]; then
+  # Check for invalid param
+  oob1=$(expr "$num" ">" "${#DIRECTORIES[@]}")
+  oob2=$(expr "$num" ">" "${#REPOS[@]}")
+  oob3=$(expr "$num" "<" 1)
+  if [[ ! "$num" =~ ^[0-9][0-9]*$ ]] || [[ oob1 -eq 1 ]] || [[ oob2 -eq 1 ]] || [[ oob3 -eq 1 ]]; then
+    echo "Invalid Sequence Length [$num] given, exiting..."
+    usage
+    exit 1
+  fi
+
+  echo "Randomizing Codebases and selecting [$num] entries"
+  # Do a simple reassignment
+  REPO_INDICES=($(printf "%s\n" "${REPO_INDICES[@]}" | shuf -n $num))
+  STUDENT_INDICES=($(printf "%s\n" "${STUDENT_INDICES[@]}" | shuf -n $num))
+fi
 
 # Create the spreadsheet to store our results
 RESULTS="$RESULT_DIR/results.csv"
@@ -145,9 +174,10 @@ touch $RESULTS
 echo -n "NetID/Comparison," >> $RESULTS
 
 # Write out each repository to the header
-len=${#REPOS[@]}
+len=${#REPO_INDICES[@]}
 for ((i = 0; i < $len; ++i)) do
-  REPO=${REPOS[$i]}
+  index=${REPO_INDICES[$i]}
+  REPO=${REPOS[$index]}s
 
   echo -n "$REPO," >> $RESULTS
 done
@@ -155,9 +185,10 @@ done
 # If comparing students was enabled
 if [[ "$students" == "true" ]]; then
   # Do the same for each student, in reverse order
-  len=${#DIRECTORIES[@]}
+  len=${#STUDENT_INDICES[@]}
   for ((i = $len - 1; i >= 0; --i)) do
-    NETID=$(getNetID ${DIRECTORIES[$i]})
+    index=${STUDENT_INDICES[$i]}
+    NETID=$(getNetID ${DIRECTORIES[$index]})
 
     echo -n "$NETID," >> $RESULTS
   done
@@ -169,10 +200,12 @@ truncate -s-1 $RESULTS
 # End the header row
 echo -ne "\n" >> $RESULTS
 
+TOTAL=${#STUDENT_INDICES[@]}
 
 # Finally, perform the comparison of the files against eachother
 for ((i = 0; i < $TOTAL; ++i)) do
-  CURRENT_DIR=${DIRECTORIES[$i]}
+  index=${STUDENT_INDICES[$i]}
+  CURRENT_DIR=${DIRECTORIES[$index]}
   # Extract the NETID from the file path
   NETID=$(getNetID $CURRENT_DIR)
 
@@ -182,8 +215,9 @@ for ((i = 0; i < $TOTAL; ++i)) do
   CLEANED_SOURCE=$(getCleanedJava $CURRENT_DIR)
 
   # First compare against the repositories
-  for ((j = 0; j < ${#REPOS[@]}; ++j)) do
-    CURRENT_REPO=${REPOS[$j]}
+  for ((j = 0; j < ${#REPO_INDICES[@]}; ++j)) do
+    repo_index=${REPO_INDICES[$j]}
+    CURRENT_REPO=${REPOS[$repo_index]}
     # Compare the two files and log the result
     OTHER_CLEANED=$(getCleanedJava $CURRENT_REPO)
 
@@ -197,7 +231,8 @@ for ((i = 0; i < $TOTAL; ++i)) do
       if [[ j == i ]]; then
         echo -n "-1" >> $RESULTS
       else
-        CURRENT_STUDENT=${DIRECTORIES[$j]}
+        student_index=${STUDENT_INDICES[$j]}
+        CURRENT_STUDENT=${DIRECTORIES[$student_index]}
 
         OTHER_CLEANED=$(getCleanedJava $CURRENT_STUDENT)
 
