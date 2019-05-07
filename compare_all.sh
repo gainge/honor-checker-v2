@@ -139,10 +139,8 @@ STUDENT_INDICES=($(seq 0 1 $(expr "${#DIRECTORIES[@]}" - 1)))
 # If they've configured a random sampling, initialize the indices accordingly
 if [[ "$random" == true ]]; then
   # Check for invalid param
-  oob1=$(expr "$num" ">" "${#DIRECTORIES[@]}")
-  oob2=$(expr "$num" ">" "${#REPOS[@]}")
-  oob3=$(expr "$num" "<" 1)
-  if [[ ! "$num" =~ ^[0-9][0-9]*$ ]] || [[ oob1 -eq 1 ]] || [[ oob2 -eq 1 ]] || [[ oob3 -eq 1 ]]; then
+  oob=$(expr "$num" "<" 1)
+  if [[ ! "$num" =~ ^[0-9][0-9]*$ ]] || [[ oob -eq 1 ]]; then
     echo "Invalid Sequence Length [$num], exiting..."
     usage
     exit 1
