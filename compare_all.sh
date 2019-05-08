@@ -2,10 +2,7 @@
 
 getCleanedJava() {
   local DIR=$1
-  # Lol we actually don't need this anymore either
-  local PARENT=$(echo $DIR | cut -d/ -f1)
-  # Netid is no longer necessary, as all cleaend java files are uniformly named
-  # local NETID=${DIR#$PARENT/}
+
   local CLEANED_SOURCE="$DIR/cleaned.txt"
 
   echo $CLEANED_SOURCE
@@ -44,7 +41,6 @@ compareFiles() {
 
   # Compare the files
   # local MATCHES=$(getMatches $FILE1 $FILE2)
-  # local NUM_MATCHES=$(echo "$MATCHES" | wc -l)
   local NUM_MATCHES=$(getNumMatches $FILE1 $FILE2)
 
   # Write the number to the output file
@@ -113,9 +109,11 @@ STUDENT_CODE_DIR="$1"
 REPO_DIR="$2"
 RESULT_DIR="./results"
 
-# Attempt to overwrite defaults
+# Attempt to overwrite default result directory
 if [[ "$#" -eq 3 ]]; then
   RESULT_DIR="$3"
+else
+  echo "No result directory specified, using [$RESULT_DIR]"
 fi
 
 # Check the args to make sure they're valid
@@ -155,7 +153,7 @@ fi
 # Create the spreadsheet to store our results
 RESULTS="$RESULT_DIR/results.csv"
 
-# prepare the testing directory
+# prepare the result directory
 if [[ -d $RESULT_DIR ]]; then
   rm -r $RESULT_DIR
 fi
@@ -175,7 +173,7 @@ echo -n "NetID/Comparison," >> $RESULTS
 len=${#REPO_INDICES[@]}
 for ((i = 0; i < $len; ++i)) do
   index=${REPO_INDICES[$i]}
-  REPO=${REPOS[$index]}s
+  REPO=${REPOS[$index]}
 
   echo -n "$REPO," >> $RESULTS
 done
@@ -225,9 +223,9 @@ for ((i = 0; i < $TOTAL; ++i)) do
   # Following repositories, compare against the other students
   if [[ "$students" == "true" ]]; then
     for ((j = $TOTAL - 1; j > i; --j)) do
-      # don't compare students against themselves
+      # Don't compare students against themselves
       if [[ j == i ]]; then
-        echo -n "-1" >> $RESULTS
+        echo -n "-1" >> $RESULTS # Though this actually won't happen b/c of the loop structure
       else
         student_index=${STUDENT_INDICES[$j]}
         CURRENT_STUDENT=${DIRECTORIES[$student_index]}

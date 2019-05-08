@@ -20,6 +20,8 @@ fi
 shift # Shift ops down
 if [[ "$#" -ge 1 ]]; then
 	REPO_DIR="$1"
+else
+  echo "No repo directory specified, using [$REPO_DIR]"
 fi
 
 # Make sure our directoies are set

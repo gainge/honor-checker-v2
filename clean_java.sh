@@ -24,10 +24,11 @@ fi
 FILE="$1"
 DESTINATION_FILE="$2"
 
+# Route to the noise file based on the parent directory param, if present
 if [[ "$#" -eq 3 ]]; then
   PARENT_DIR="$3"
   PARENT_DIR=${PARENT_DIR%%/}
-  NOISE_PATTERNS="$PARENT_DIR/$NOISE_PATTERNS" # Kind of ghetto navigate back but w/e
+  NOISE_PATTERNS="$PARENT_DIR/$NOISE_PATTERNS" # Kind of ghetto navigate but w/e
   LINE_NOISE="$PARENT_DIR/$LINE_NOISE"
 fi
 
@@ -57,8 +58,8 @@ cp $FILE $DESTINATION_FILE
 sedi 's/[{}]//g' $DESTINATION_FILE                              # Remove brackets
 sedi 's/^[[:blank:]]*\(.*\)[[:blank:]]*$/\1/' $DESTINATION_FILE # Remove leading/trailing whitespace
 sedi 's/^[[:blank:]]*\*[[:blank:]]\(.*\)/\1/' $DESTINATION_FILE # Convert javadoc lines to strings
-sedi 's/^\/\/[[:blank:]]*$//' $DESTINATION_FILE
-sedi 's/^do[[:blank:]]*$//' $DESTINATION_FILE
+sedi 's/^\/\/[[:blank:]]*$//' $DESTINATION_FILE                 # Remove leading slashes from comment lines
+sedi 's/^do[[:blank:]]*$//' $DESTINATION_FILE                   # Remove various keywords that line_noise was missing
 sedi 's/^[[:blank:]]*static[[:blank:]]*$//' $DESTINATION_FILE
 sedi 's/^;[[:blank:]]*$//' $DESTINATION_FILE
 sedi 's/^);[[:blank:]]*$//' $DESTINATION_FILE

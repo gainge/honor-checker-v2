@@ -1,10 +1,8 @@
 #!/bin/bash
 
-
 usage() {
   echo "usage: $0 <PARENT DIRECTORY> [NOISE DIRECTORY]"
 }
-
 
 if [[ "$#" -eq 0 ]]; then
   usage

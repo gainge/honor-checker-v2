@@ -26,7 +26,7 @@ showHelp() {
   [-d, --download]      Download github repos in url file
   [-c, --clean]         Clean all code, student and repo
   [-m, -p, --compare]   Compare codebases (student to repo by default)
-  [-r n, --random n]    Use random subset of size n
+  [-r n, --random n]    Use random codebase subset of size n
   [-s, --students]      Also compare students to other students
   [-i, --results]       Start local server to show results
 

@@ -12,6 +12,8 @@ fi
 
 if [[ "$#" -ge 2 ]]; then
   TARGET_DIR=$2
+else
+  echo "No target directory specified, using [$TARGET_DIR]"
 fi
 
 echo "Processin Files in: '$1'"

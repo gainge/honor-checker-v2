@@ -23,7 +23,7 @@ if [[ ! -f $FILENAME ]]; then
   exit 1
 fi
 
-# extract the netID from the file
+# extract the netID from the file name
 NETID=${FILENAME%.*}
 NETID=$(echo $NETID | sed 's/[[:blank:][:space:]]//g' )
 PARTS=(${NETID//\// })
