@@ -98,9 +98,10 @@
         </div>
     </div>
 
-    <!-- Save the headers to a js variable -->
+    <!-- Save the headers and parent dir to js variables -->
     <script>
         var headers = <?php echo json_encode($headers) ?>;
+        var PARENT_DIR = <?php echo json_encode($project) ?>;
     </script>
 </body>
 </html>

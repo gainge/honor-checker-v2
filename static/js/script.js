@@ -1,6 +1,5 @@
 // results-table
 
-var PARENT_DIR = "Client";
 var STUDENT_CODE = "student-code-directories";
 var ALLJAVA = "alljava.txt";
 var CLEANED = "cleaned.txt";
